@@ -1,0 +1,16 @@
+{
+  "name": "mathapp-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "description": "One-command dev launcher for the MathAPP Django backend + Vue frontend",
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": ".venv\\Scripts\\python.exe manage.py runserver 127.0.0.1:8000",
+    "dev:frontend": "pnpm --dir frontend run dev -- --host 127.0.0.1",
+    "setup:backend": "python -m venv .venv && .venv\\Scripts\\python.exe -m pip install -r requirements.txt && .venv\\Scripts\\python.exe manage.py migrate",
+    "setup:frontend": "pnpm --dir frontend install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
