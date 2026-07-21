@@ -1,0 +1,442 @@
+$ vite "--host" "127.0.0.1"
+11:36:28 [vite] (client) [console.warn] [Vue warn]: Component provided template option but runtime compilation is not supported in this build of Vue. Configure your bundler to alias "vue" to "vue/dist/vue.esm-bundler.js". 
+  at <Anonymous key=6 title="正弦曲线交互" desc="拖动滑块观察振幅和频率如何影响函数图像，为后续函数极限和连续性做准备。" > 
+  at <TemplateLesson key=0 source="@chapter 1 | 函数与极限\n@section 1.1 | 数列极限\n@subsection 1.1.1 | 核心概念\n\n@text 学习目标\n数列极限描述的是：当项数不断增大时，数列的项是否稳定地靠近某个确定的数。\n\n本节需要掌握三件事：\n- 用直观语言判断一个数列是否收敛；\n- 理解 $\\varepsilon-N$ 定义中“最终进入任意小误差范围”的含义；\n- 能用基本代数变形计算常见数列极限。\n\n@def 1 | 数列极限\n设 $\\{a_n\\}$ 是一个数列，$A$ 是一个常数。如果对任意 $\\varepsilon>0$，总存在正整数 $N$，使得当 $n>N$ 时都有\n$$\n|a_n-A|<\\varepsilon,\n$$\n则称数列 $\\{a_n\\}$ 收敛于 $A$，记作\n$$\n\\lim_{n\\to\\infty}a_n=A.\n$$\n\n@table 常见数列极限 | 先记住这些基本模型，再处理复杂变形。\n| 数列 | 极限 | 说明 |\n| --- | --- | --- |\n| $1/n$ | $0$ | 分母无限增大 |\n| $(n+1)/n$ | $1$ | 分子分母同阶 |\n| $(-1)^n$ | 不存在 | 在 $1$ 与 $-1$ 之间振荡 |\n\n@problem 例题 1\n判断数列\n$$\na_n=\\frac{2n+1}{n+3}\n$$\n是否收敛，并求它的极限。\n\n@solution 解析\n分子分母同时除以 $n$，得到\n$$\na_n=\\frac{2+1/n}{1+3/n}.\n$$\n当 $n\\to\\infty$ 时，$1/n\\to0$，所以\n$$\n\\lim_{n\\to\\infty}a_n=\\frac{2}{1}=2.\n$$\n\n@subsection 1.1.2 | 图像直觉\n\n@image 数列趋近示意图 | data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20840%20380'%3E%3Crect%20width='840'%20height='380'%20fill='%23fbfcfb'/%3E%3Cline%20x1='70'%20y1='300'%20x2='780'%20y2='300'%20stroke='%23cfd8d1'%20stroke-width='3'/%3E%3Cline%20x1='70'%20y1='40'%20x2='70'%20y2='300'%20stroke='%23cfd8d1'%20stroke-width='3'/%3E%3Cline%20x1='70'%20y1='150'%20x2='780'%20y2='150'%20stroke='%23284c3e'%20stroke-width='3'%20stroke-dasharray='10%2010'/%3E%3Ctext%20x='790'%20y='155'%20font-size='20'%20fill='%23284c3e'%3EA%3C/text%3E%3Cg%20fill='%233a5d7a'%3E%3Ccircle%20cx='120'%20cy='245'%20r='8'/%3E%3Ccircle%20cx='180'%20cy='210'%20r='8'/%3E%3Ccircle%20cx='240'%20cy='188'%20r='8'/%3E%3Ccircle%20cx='300'%20cy='174'%20r='8'/%3E%3Ccircle%20cx='360'%20cy='165'%20r='8'/%3E%3Ccircle%20cx='420'%20cy='159'%20r='8'/%3E%3Ccircle%20cx='480'%20cy='155'%20r='8'/%3E%3Ccircle%20cx='540'%20cy='153'%20r='8'/%3E%3Ccircle%20cx='600'%20cy='151'%20r='8'/%3E%3C/g%3E%3C/svg%3E | 图 1：数列项逐步靠近水平线 $A$。 | 数列趋近示意图 | wide\n\n@interactive-sine 正弦曲线交互 | 拖动滑块观察振幅和频率如何影响函数图像，为后续函数极限和连续性做准备。\n\n@interactive 自定义交互模块 | 这里可以后续挂载几何作图、函数图像、向量演示、矩阵变换演示等自定义模块。\n\n@video 数列极限视频讲解 |  | 这里是视频播放窗口。把第二个字段替换成 mp4 地址、B 站 iframe 地址或其他可嵌入播放地址即可。" fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+11:36:30 [vite] (client) [console.warn] [Vue warn]: Component provided template option but runtime compilation is not supported in this build of Vue. Configure your bundler to alias "vue" to "vue/dist/vue.esm-bundler.js". 
+  at <Anonymous key=6 title="正弦曲线交互" desc="拖动滑块观察振幅和频率如何影响函数图像，为后续函数极限和连续性做准备。" > 
+  at <TemplateLesson key=0 source="@chapter 1 | 函数与极限\n@section 1.1 | 数列极限\n@subsection 1.1.1 | 核心概念\n\n@text 学习目标\n数列极限描述的是：当项数不断增大时，数列的项是否稳定地靠近某个确定的数。\n\n本节需要掌握三件事：\n- 用直观语言判断一个数列是否收敛；\n- 理解 $\\varepsilon-N$ 定义中“最终进入任意小误差范围”的含义；\n- 能用基本代数变形计算常见数列极限。\n\n@def 1 | 数列极限\n设 $\\{a_n\\}$ 是一个数列，$A$ 是一个常数。如果对任意 $\\varepsilon>0$，总存在正整数 $N$，使得当 $n>N$ 时都有\n$$\n|a_n-A|<\\varepsilon,\n$$\n则称数列 $\\{a_n\\}$ 收敛于 $A$，记作\n$$\n\\lim_{n\\to\\infty}a_n=A.\n$$\n\n@table 常见数列极限 | 先记住这些基本模型，再处理复杂变形。\n| 数列 | 极限 | 说明 |\n| --- | --- | --- |\n| $1/n$ | $0$ | 分母无限增大 |\n| $(n+1)/n$ | $1$ | 分子分母同阶 |\n| $(-1)^n$ | 不存在 | 在 $1$ 与 $-1$ 之间振荡 |\n\n@problem 例题 1\n判断数列\n$$\na_n=\\frac{2n+1}{n+3}\n$$\n是否收敛，并求它的极限。\n\n@solution 解析\n分子分母同时除以 $n$，得到\n$$\na_n=\\frac{2+1/n}{1+3/n}.\n$$\n当 $n\\to\\infty$ 时，$1/n\\to0$，所以\n$$\n\\lim_{n\\to\\infty}a_n=\\frac{2}{1}=2.\n$$\n\n@subsection 1.1.2 | 图像直觉\n\n@image 数列趋近示意图 | data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20840%20380'%3E%3Crect%20width='840'%20height='380'%20fill='%23fbfcfb'/%3E%3Cline%20x1='70'%20y1='300'%20x2='780'%20y2='300'%20stroke='%23cfd8d1'%20stroke-width='3'/%3E%3Cline%20x1='70'%20y1='40'%20x2='70'%20y2='300'%20stroke='%23cfd8d1'%20stroke-width='3'/%3E%3Cline%20x1='70'%20y1='150'%20x2='780'%20y2='150'%20stroke='%23284c3e'%20stroke-width='3'%20stroke-dasharray='10%2010'/%3E%3Ctext%20x='790'%20y='155'%20font-size='20'%20fill='%23284c3e'%3EA%3C/text%3E%3Cg%20fill='%233a5d7a'%3E%3Ccircle%20cx='120'%20cy='245'%20r='8'/%3E%3Ccircle%20cx='180'%20cy='210'%20r='8'/%3E%3Ccircle%20cx='240'%20cy='188'%20r='8'/%3E%3Ccircle%20cx='300'%20cy='174'%20r='8'/%3E%3Ccircle%20cx='360'%20cy='165'%20r='8'/%3E%3Ccircle%20cx='420'%20cy='159'%20r='8'/%3E%3Ccircle%20cx='480'%20cy='155'%20r='8'/%3E%3Ccircle%20cx='540'%20cy='153'%20r='8'/%3E%3Ccircle%20cx='600'%20cy='151'%20r='8'/%3E%3C/g%3E%3C/svg%3E | 图 1：数列项逐步靠近水平线 $A$。 | 数列趋近示意图 | wide\n\n@interactive-sine 正弦曲线交互 | 拖动滑块观察振幅和频率如何影响函数图像，为后续函数极限和连续性做准备。\n\n@interactive 自定义交互模块 | 这里可以后续挂载几何作图、函数图像、向量演示、矩阵变换演示等自定义模块。\n\n@video 数列极限视频讲解 |  | 这里是视频播放窗口。把第二个字段替换成 mp4 地址、B 站 iframe 地址或其他可嵌入播放地址即可。" fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+14:41:24 [vite] (client) [console.warn] [Vue warn]: Component provided template option but runtime compilation is not supported in this build of Vue. Configure your bundler to alias "vue" to "vue/dist/vue.esm-bundler.js". 
+  at <Anonymous key=6 title="正弦曲线交互" desc="拖动滑块观察振幅和频率如何影响函数图像，为后续函数极限和连续性做准备。" > 
+  at <TemplateLesson key=0 source="@chapter 1 | 函数与极限\n@section 1.1 | 数列极限\n@subsection 1.1.1 | 核心概念\n\n@text 学习目标\n数列极限描述的是：当项数不断增大时，数列的项是否稳定地靠近某个确定的数。\n\n本节需要掌握三件事：\n- 用直观语言判断一个数列是否收敛；\n- 理解 $\\varepsilon-N$ 定义中“最终进入任意小误差范围”的含义；\n- 能用基本代数变形计算常见数列极限。\n\n@def 1 | 数列极限\n设 $\\{a_n\\}$ 是一个数列，$A$ 是一个常数。如果对任意 $\\varepsilon>0$，总存在正整数 $N$，使得当 $n>N$ 时都有\n$$\n|a_n-A|<\\varepsilon,\n$$\n则称数列 $\\{a_n\\}$ 收敛于 $A$，记作\n$$\n\\lim_{n\\to\\infty}a_n=A.\n$$\n\n@table 常见数列极限 | 先记住这些基本模型，再处理复杂变形。\n| 数列 | 极限 | 说明 |\n| --- | --- | --- |\n| $1/n$ | $0$ | 分母无限增大 |\n| $(n+1)/n$ | $1$ | 分子分母同阶 |\n| $(-1)^n$ | 不存在 | 在 $1$ 与 $-1$ 之间振荡 |\n\n@problem 例题 1\n判断数列\n$$\na_n=\\frac{2n+1}{n+3}\n$$\n是否收敛，并求它的极限。\n\n@solution 解析\n分子分母同时除以 $n$，得到\n$$\na_n=\\frac{2+1/n}{1+3/n}.\n$$\n当 $n\\to\\infty$ 时，$1/n\\to0$，所以\n$$\n\\lim_{n\\to\\infty}a_n=\\frac{2}{1}=2.\n$$\n\n@subsection 1.1.2 | 图像直觉\n\n@image 数列趋近示意图 | data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20840%20380'%3E%3Crect%20width='840'%20height='380'%20fill='%23fbfcfb'/%3E%3Cline%20x1='70'%20y1='300'%20x2='780'%20y2='300'%20stroke='%23cfd8d1'%20stroke-width='3'/%3E%3Cline%20x1='70'%20y1='40'%20x2='70'%20y2='300'%20stroke='%23cfd8d1'%20stroke-width='3'/%3E%3Cline%20x1='70'%20y1='150'%20x2='780'%20y2='150'%20stroke='%23284c3e'%20stroke-width='3'%20stroke-dasharray='10%2010'/%3E%3Ctext%20x='790'%20y='155'%20font-size='20'%20fill='%23284c3e'%3EA%3C/text%3E%3Cg%20fill='%233a5d7a'%3E%3Ccircle%20cx='120'%20cy='245'%20r='8'/%3E%3Ccircle%20cx='180'%20cy='210'%20r='8'/%3E%3Ccircle%20cx='240'%20cy='188'%20r='8'/%3E%3Ccircle%20cx='300'%20cy='174'%20r='8'/%3E%3Ccircle%20cx='360'%20cy='165'%20r='8'/%3E%3Ccircle%20cx='420'%20cy='159'%20r='8'/%3E%3Ccircle%20cx='480'%20cy='155'%20r='8'/%3E%3Ccircle%20cx='540'%20cy='153'%20r='8'/%3E%3Ccircle%20cx='600'%20cy='151'%20r='8'/%3E%3C/g%3E%3C/svg%3E | 图 1：数列项逐步靠近水平线 $A$。 | 数列趋近示意图 | wide\n\n@interactive-sine 正弦曲线交互 | 拖动滑块观察振幅和频率如何影响函数图像，为后续函数极限和连续性做准备。\n\n@interactive 自定义交互模块 | 这里可以后续挂载几何作图、函数图像、向量演示、矩阵变换演示等自定义模块。\n\n@video 数列极限视频讲解 |  | 这里是视频播放窗口。把第二个字段替换成 mp4 地址、B 站 iframe 地址或其他可嵌入播放地址即可。" fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+14:42:25 [vite] (client) [console.warn] [Vue warn]: Component provided template option but runtime compilation is not supported in this build of Vue. Configure your bundler to alias "vue" to "vue/dist/vue.esm-bundler.js". 
+  at <Anonymous key=6 title="正弦曲线交互" desc="拖动滑块观察振幅和频率如何影响函数图像，为后续函数极限和连续性做准备。" > 
+  at <TemplateLesson key=0 source="@chapter 1 | 函数与极限\n@section 1.1 | 数列极限\n@subsection 1.1.1 | 核心概念\n\n@text 学习目标\n数列极限描述的是：当项数不断增大时，数列的项是否稳定地靠近某个确定的数。\n\n本节需要掌握三件事：\n- 用直观语言判断一个数列是否收敛；\n- 理解 $\\varepsilon-N$ 定义中“最终进入任意小误差范围”的含义；\n- 能用基本代数变形计算常见数列极限。\n\n@def 1 | 数列极限\n设 $\\{a_n\\}$ 是一个数列，$A$ 是一个常数。如果对任意 $\\varepsilon>0$，总存在正整数 $N$，使得当 $n>N$ 时都有\n$$\n|a_n-A|<\\varepsilon,\n$$\n则称数列 $\\{a_n\\}$ 收敛于 $A$，记作\n$$\n\\lim_{n\\to\\infty}a_n=A.\n$$\n\n@table 常见数列极限 | 先记住这些基本模型，再处理复杂变形。\n| 数列 | 极限 | 说明 |\n| --- | --- | --- |\n| $1/n$ | $0$ | 分母无限增大 |\n| $(n+1)/n$ | $1$ | 分子分母同阶 |\n| $(-1)^n$ | 不存在 | 在 $1$ 与 $-1$ 之间振荡 |\n\n@problem 例题 1\n判断数列\n$$\na_n=\\frac{2n+1}{n+3}\n$$\n是否收敛，并求它的极限。\n\n@solution 解析\n分子分母同时除以 $n$，得到\n$$\na_n=\\frac{2+1/n}{1+3/n}.\n$$\n当 $n\\to\\infty$ 时，$1/n\\to0$，所以\n$$\n\\lim_{n\\to\\infty}a_n=\\frac{2}{1}=2.\n$$\n\n@subsection 1.1.2 | 图像直觉\n\n@image 数列趋近示意图 | data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20840%20380'%3E%3Crect%20width='840'%20height='380'%20fill='%23fbfcfb'/%3E%3Cline%20x1='70'%20y1='300'%20x2='780'%20y2='300'%20stroke='%23cfd8d1'%20stroke-width='3'/%3E%3Cline%20x1='70'%20y1='40'%20x2='70'%20y2='300'%20stroke='%23cfd8d1'%20stroke-width='3'/%3E%3Cline%20x1='70'%20y1='150'%20x2='780'%20y2='150'%20stroke='%23284c3e'%20stroke-width='3'%20stroke-dasharray='10%2010'/%3E%3Ctext%20x='790'%20y='155'%20font-size='20'%20fill='%23284c3e'%3EA%3C/text%3E%3Cg%20fill='%233a5d7a'%3E%3Ccircle%20cx='120'%20cy='245'%20r='8'/%3E%3Ccircle%20cx='180'%20cy='210'%20r='8'/%3E%3Ccircle%20cx='240'%20cy='188'%20r='8'/%3E%3Ccircle%20cx='300'%20cy='174'%20r='8'/%3E%3Ccircle%20cx='360'%20cy='165'%20r='8'/%3E%3Ccircle%20cx='420'%20cy='159'%20r='8'/%3E%3Ccircle%20cx='480'%20cy='155'%20r='8'/%3E%3Ccircle%20cx='540'%20cy='153'%20r='8'/%3E%3Ccircle%20cx='600'%20cy='151'%20r='8'/%3E%3C/g%3E%3C/svg%3E | 图 1：数列项逐步靠近水平线 $A$。 | 数列趋近示意图 | wide\n\n@interactive-sine 正弦曲线交互 | 拖动滑块观察振幅和频率如何影响函数图像，为后续函数极限和连续性做准备。\n\n@interactive 自定义交互模块 | 这里可以后续挂载几何作图、函数图像、向量演示、矩阵变换演示等自定义模块。\n\n@video 数列极限视频讲解 |  | 这里是视频播放窗口。把第二个字段替换成 mp4 地址、B 站 iframe 地址或其他可嵌入播放地址即可。" fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+14:42:27 [vite] (client) [console.warn] [Vue warn]: Component provided template option but runtime compilation is not supported in this build of Vue. Configure your bundler to alias "vue" to "vue/dist/vue.esm-bundler.js". 
+  at <Anonymous key=6 title="正弦曲线交互" desc="拖动滑块观察振幅和频率如何影响函数图像，为后续函数极限和连续性做准备。" > 
+  at <TemplateLesson key=0 source="@chapter 1 | 函数与极限\n@section 1.1 | 数列极限\n@subsection 1.1.1 | 核心概念\n\n@text 学习目标\n数列极限描述的是：当项数不断增大时，数列的项是否稳定地靠近某个确定的数。\n\n本节需要掌握三件事：\n- 用直观语言判断一个数列是否收敛；\n- 理解 $\\varepsilon-N$ 定义中“最终进入任意小误差范围”的含义；\n- 能用基本代数变形计算常见数列极限。\n\n@def 1 | 数列极限\n设 $\\{a_n\\}$ 是一个数列，$A$ 是一个常数。如果对任意 $\\varepsilon>0$，总存在正整数 $N$，使得当 $n>N$ 时都有\n$$\n|a_n-A|<\\varepsilon,\n$$\n则称数列 $\\{a_n\\}$ 收敛于 $A$，记作\n$$\n\\lim_{n\\to\\infty}a_n=A.\n$$\n\n@table 常见数列极限 | 先记住这些基本模型，再处理复杂变形。\n| 数列 | 极限 | 说明 |\n| --- | --- | --- |\n| $1/n$ | $0$ | 分母无限增大 |\n| $(n+1)/n$ | $1$ | 分子分母同阶 |\n| $(-1)^n$ | 不存在 | 在 $1$ 与 $-1$ 之间振荡 |\n\n@problem 例题 1\n判断数列\n$$\na_n=\\frac{2n+1}{n+3}\n$$\n是否收敛，并求它的极限。\n\n@solution 解析\n分子分母同时除以 $n$，得到\n$$\na_n=\\frac{2+1/n}{1+3/n}.\n$$\n当 $n\\to\\infty$ 时，$1/n\\to0$，所以\n$$\n\\lim_{n\\to\\infty}a_n=\\frac{2}{1}=2.\n$$\n\n@subsection 1.1.2 | 图像直觉\n\n@image 数列趋近示意图 | data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20840%20380'%3E%3Crect%20width='840'%20height='380'%20fill='%23fbfcfb'/%3E%3Cline%20x1='70'%20y1='300'%20x2='780'%20y2='300'%20stroke='%23cfd8d1'%20stroke-width='3'/%3E%3Cline%20x1='70'%20y1='40'%20x2='70'%20y2='300'%20stroke='%23cfd8d1'%20stroke-width='3'/%3E%3Cline%20x1='70'%20y1='150'%20x2='780'%20y2='150'%20stroke='%23284c3e'%20stroke-width='3'%20stroke-dasharray='10%2010'/%3E%3Ctext%20x='790'%20y='155'%20font-size='20'%20fill='%23284c3e'%3EA%3C/text%3E%3Cg%20fill='%233a5d7a'%3E%3Ccircle%20cx='120'%20cy='245'%20r='8'/%3E%3Ccircle%20cx='180'%20cy='210'%20r='8'/%3E%3Ccircle%20cx='240'%20cy='188'%20r='8'/%3E%3Ccircle%20cx='300'%20cy='174'%20r='8'/%3E%3Ccircle%20cx='360'%20cy='165'%20r='8'/%3E%3Ccircle%20cx='420'%20cy='159'%20r='8'/%3E%3Ccircle%20cx='480'%20cy='155'%20r='8'/%3E%3Ccircle%20cx='540'%20cy='153'%20r='8'/%3E%3Ccircle%20cx='600'%20cy='151'%20r='8'/%3E%3C/g%3E%3C/svg%3E | 图 1：数列项逐步靠近水平线 $A$。 | 数列趋近示意图 | wide\n\n@interactive-sine 正弦曲线交互 | 拖动滑块观察振幅和频率如何影响函数图像，为后续函数极限和连续性做准备。\n\n@interactive 自定义交互模块 | 这里可以后续挂载几何作图、函数图像、向量演示、矩阵变换演示等自定义模块。\n\n@video 数列极限视频讲解 |  | 这里是视频播放窗口。把第二个字段替换成 mp4 地址、B 站 iframe 地址或其他可嵌入播放地址即可。" fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+15:44:08 [vite] (client) [console.warn] [Vue warn]: Invalid prop: type check failed for prop "source". Expected String with value "undefined", got Undefined  
+  at <TemplateLesson key=0 source=undefined fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+15:44:08 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of render function 
+  at <TemplateLesson key=0 source=undefined fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+15:44:08 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+15:44:08 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of undefined (reading 'split')
+ > parseTemplate src/utils/templateParser.js:54:10
+    52 |    }
+    53 |  
+    54 |    source.split(/\r?\n/).forEach((line) => {
+       |            ^
+    55 |      const command = commandFrom(line)
+    56 |      if (!command) {
+ > ComputedRefImpl.fn src/components/TemplateLesson.vue:25:29
+ > refreshComputed node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:414:27
+ > get value node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1745:4
+ > unref node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1570:44
+ > Object.get node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1576:63
+ > Proxy._sfc_render src/components/TemplateLesson.vue:131:17
+ > renderComponentRoot node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:4612:15
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6182:45
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+
+15:44:10 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+15:44:10 [vite] (client) [Unhandled rejection] TypeError: Cannot destructure property 'type' of 'vnode' as it is null.
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6691:6
+ > unmountComponent node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6833:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6724:6
+ > unmountChildren node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6847:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6748:8
+ > unmountComponent node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6833:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6724:6
+ > patch node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:5486:6
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6269:8
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+
+15:44:12 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+15:44:12 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+15:44:12 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+15:44:12 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+15:44:12 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+15:44:12 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+15:44:13 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+15:44:13 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:23:24 [vite] (client) [console.warn] [Vue warn]: Invalid prop: type check failed for prop "source". Expected String with value "undefined", got Undefined  
+  at <TemplateLesson key=0 source=undefined fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:23:24 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of render function 
+  at <TemplateLesson key=0 source=undefined fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:23:24 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:23:24 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of undefined (reading 'split')
+ > parseTemplate src/utils/templateParser.js:54:10
+    52 |    }
+    53 |  
+    54 |    source.split(/\r?\n/).forEach((line) => {
+       |            ^
+    55 |      const command = commandFrom(line)
+    56 |      if (!command) {
+ > ComputedRefImpl.fn src/components/TemplateLesson.vue:25:29
+ > refreshComputed node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:414:27
+ > get value node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1745:4
+ > unref node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1570:44
+ > Object.get node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1576:63
+ > Proxy._sfc_render src/components/TemplateLesson.vue:131:17
+ > renderComponentRoot node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:4612:15
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6182:45
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+
+16:23:28 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:23:28 [vite] (client) [Unhandled rejection] TypeError: Cannot destructure property 'type' of 'vnode' as it is null.
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6691:6
+ > unmountComponent node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6833:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6724:6
+ > unmountChildren node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6847:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6748:8
+ > unmountComponent node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6833:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6724:6
+ > patch node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:5486:6
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6269:8
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+
+16:24:50 [vite] (client) [console.warn] [Vue warn]: Invalid prop: type check failed for prop "source". Expected String with value "undefined", got Undefined  
+  at <TemplateLesson key=0 source=undefined fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:24:50 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of render function 
+  at <TemplateLesson key=0 source=undefined fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:24:50 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:24:50 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of undefined (reading 'split')
+ > parseTemplate src/utils/templateParser.js:54:10
+    52 |    }
+    53 |  
+    54 |    source.split(/\r?\n/).forEach((line) => {
+       |            ^
+    55 |      const command = commandFrom(line)
+    56 |      if (!command) {
+ > ComputedRefImpl.fn src/components/TemplateLesson.vue:25:29
+ > refreshComputed node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:414:27
+ > get value node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1745:4
+ > unref node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1570:44
+ > Object.get node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1576:63
+ > Proxy._sfc_render src/components/TemplateLesson.vue:131:17
+ > renderComponentRoot node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:4612:15
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6182:45
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+
+16:24:52 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:24:52 [vite] (client) [Unhandled rejection] TypeError: Cannot destructure property 'type' of 'vnode' as it is null.
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6691:6
+ > unmountComponent node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6833:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6724:6
+ > unmountChildren node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6847:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6748:8
+ > unmountComponent node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6833:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6724:6
+ > patch node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:5486:6
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6269:8
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+
+16:24:53 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:24:53 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:24:54 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:24:54 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:24:54 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:24:54 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:25:49 [vite] (client) [console.warn] [Vue warn]: Invalid prop: type check failed for prop "source". Expected String with value "undefined", got Undefined  
+  at <TemplateLesson key=0 source=undefined fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:25:49 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of render function 
+  at <TemplateLesson key=0 source=undefined fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:25:49 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:25:49 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of undefined (reading 'split')
+ > parseTemplate src/utils/templateParser.js:54:10
+    52 |    }
+    53 |  
+    54 |    source.split(/\r?\n/).forEach((line) => {
+       |            ^
+    55 |      const command = commandFrom(line)
+    56 |      if (!command) {
+ > ComputedRefImpl.fn src/components/TemplateLesson.vue:25:29
+ > refreshComputed node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:414:27
+ > get value node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1745:4
+ > unref node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1570:44
+ > Object.get node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1576:63
+ > Proxy._sfc_render src/components/TemplateLesson.vue:131:17
+ > renderComponentRoot node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:4612:15
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6182:45
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+
+16:25:50 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:25:50 [vite] (client) [Unhandled rejection] TypeError: Cannot destructure property 'type' of 'vnode' as it is null.
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6691:6
+ > unmountComponent node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6833:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6724:6
+ > unmountChildren node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6847:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6748:8
+ > unmountComponent node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6833:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6724:6
+ > patch node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:5486:6
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6269:8
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+
+16:26:21 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:26:21 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:26:22 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:26:22 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:26:23 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:26:23 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:26:23 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:26:23 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:26:24 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:26:24 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:27:56 [vite] (client) [console.warn] [Vue warn]: Invalid prop: type check failed for prop "source". Expected String with value "undefined", got Undefined  
+  at <TemplateLesson key=0 source=undefined fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:27:56 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of render function 
+  at <TemplateLesson key=0 source=undefined fallback-title="数列极限"  ... > 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:27:56 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <KnowledgePage onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< {} > > 
+  at <RouterView> 
+  at <App>
+16:27:56 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of undefined (reading 'split')
+ > parseTemplate src/utils/templateParser.js:54:10
+    52 |    }
+    53 |  
+    54 |    source.split(/\r?\n/).forEach((line) => {
+       |            ^
+    55 |      const command = commandFrom(line)
+    56 |      if (!command) {
+ > ComputedRefImpl.fn src/components/TemplateLesson.vue:25:29
+ > refreshComputed node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:414:27
+ > get value node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1745:4
+ > unref node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1570:44
+ > Object.get node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:1576:63
+ > Proxy._sfc_render src/components/TemplateLesson.vue:131:17
+ > renderComponentRoot node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:4612:15
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6182:45
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+
+16:32:08 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of scheduler flush 
+  at <RouterView> 
+  at <App>
+16:32:08 [vite] (client) [Unhandled rejection] TypeError: Cannot destructure property 'type' of 'vnode' as it is null.
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6691:6
+ > unmountComponent node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6833:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6724:6
+ > unmountChildren node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6847:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6748:8
+ > unmountComponent node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6833:6
+ > unmount node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6724:6
+ > patch node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:5486:6
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6269:8
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+
+16:32:19 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:32:19 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:32:20 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:32:20 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:32:21 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:32:21 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+
+16:32:22 [vite] (client) [console.warn] [Vue warn]: Unhandled error during execution of component update 
+  at <RouterView> 
+  at <App>
+16:32:22 [vite] (client) [Unhandled rejection] TypeError: Cannot read properties of null (reading 'parentNode')
+ > parentNode node_modules/.pnpm/@vue+runtime-dom@3.5.39/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js:51:29
+ > ReactiveEffect.componentUpdateFn [as fn] node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:6273:10
+ > ReactiveEffect.run node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:260:18
+ > ReactiveEffect.runIfDirty node_modules/.pnpm/@vue+reactivity@3.5.39/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js:298:11
+ > callWithErrorHandling node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:199:32
+ > flushJobs node_modules/.pnpm/@vue+runtime-core@3.5.39/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js:408:8
+

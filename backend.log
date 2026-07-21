@@ -1,0 +1,51 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 09, 2026 - 11:27:49
+Django version 4.2.30, using settings 'mathapp.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 09, 2026 - 11:33:50
+Django version 4.2.30, using settings 'mathapp.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 09, 2026 - 14:47:51
+Django version 4.2.30, using settings 'mathapp.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 09, 2026 - 16:59:06
+Django version 4.2.30, using settings 'mathapp.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 09, 2026 - 16:59:29
+Django version 4.2.30, using settings 'mathapp.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): content.
+Run 'python manage.py migrate' to apply them.
+July 09, 2026 - 17:11:02
+Django version 4.2.30, using settings 'mathapp.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+

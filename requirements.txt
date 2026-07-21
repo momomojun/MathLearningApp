@@ -1,0 +1,10 @@
+asgiref==3.11.1
+Django==4.2.30
+django-cors-headers==4.9.0
+django-simpleui==2026.1.13
+djangorestframework==3.16.1
+psycopg2-binary==2.9.12
+python-dotenv==1.0.1
+sqlparse==0.5.5
+typing_extensions==4.16.0
+tzdata==2026.2

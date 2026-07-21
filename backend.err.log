@@ -1,0 +1,1535 @@
+Watching for file changes with StatReloader
+[09/Jul/2026 11:28:02] "GET /admin/ HTTP/1.1" 302 0
+[09/Jul/2026 11:28:02] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4368
+[09/Jul/2026 11:28:02] "GET /static/admin/simpleui-x/css/login.css?_=2.1 HTTP/1.1" 304 0
+[09/Jul/2026 11:28:02] "GET /static/admin/simpleui-x/js/login.js?_=3.3 HTTP/1.1" 304 0
+[09/Jul/2026 11:28:02] "GET /static/admin/simpleui-x/particles/particles.js HTTP/1.1" 304 0
+[09/Jul/2026 11:28:02] "GET /static/admin/simpleui-x/particles/app.js HTTP/1.1" 304 0
+[09/Jul/2026 11:28:02] "GET /static/admin/simpleui-x/img/bg.svg HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[09/Jul/2026 11:28:03] "GET /favicon.ico HTTP/1.1" 404 2455
+[09/Jul/2026 11:28:05] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[09/Jul/2026 11:28:06] "GET / HTTP/1.1" 302 0
+[09/Jul/2026 11:28:06] "GET /admin/ HTTP/1.1" 200 16728
+[09/Jul/2026 11:28:06,419] - Broken pipe from ('127.0.0.1', 60400)
+[09/Jul/2026 11:28:08] "GET /admin/auth/user/ HTTP/1.1" 200 42652
+[09/Jul/2026 11:28:08] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 11:28:19] "GET /static/admin/simpleui-x/theme/element.css HTTP/1.1" 200 4239
+C:\Users\15294\Documents\MathAPP\mathapp\settings.py changed, reloading.
+Watching for file changes with StatReloader
+[09/Jul/2026 11:36:23] "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+[09/Jul/2026 11:36:23] "POST /api/auth/login/ HTTP/1.1" 200 207
+[09/Jul/2026 11:37:39] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 11:37:39] "GET /api/auth/me/ HTTP/1.1" 200 147
+[09/Jul/2026 11:37:42] "GET /admin/ HTTP/1.1" 200 16728
+Not Found: /favicon.ico
+[09/Jul/2026 11:37:42] "GET /favicon.ico HTTP/1.1" 404 2455
+[09/Jul/2026 11:37:46] "GET /admin/auth/user/ HTTP/1.1" 200 42652
+[09/Jul/2026 11:37:46] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 11:37:57] "GET /admin/auth/user/1/change/ HTTP/1.1" 200 23033
+[09/Jul/2026 11:37:58] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 11:38:24] "POST /admin/auth/user/1/change/ HTTP/1.1" 302 0
+[09/Jul/2026 11:38:24] "GET /admin/auth/user/ HTTP/1.1" 200 42794
+[09/Jul/2026 11:38:24] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 11:38:28] "GET /admin/auth/user/2/change/ HTTP/1.1" 200 22992
+[09/Jul/2026 11:38:28] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 11:38:38] "POST /admin/auth/user/2/change/ HTTP/1.1" 302 0
+[09/Jul/2026 11:38:38] "GET /admin/auth/user/ HTTP/1.1" 200 42796
+[09/Jul/2026 11:38:38] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 11:38:51] "GET /admin/ HTTP/1.1" 200 17829
+[09/Jul/2026 11:38:52] "GET /admin/ HTTP/1.1" 200 17829
+[09/Jul/2026 13:43:07] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 13:43:08] "GET /api/auth/me/ HTTP/1.1" 200 149
+[09/Jul/2026 13:43:10] "GET /api/auth/me/ HTTP/1.1" 200 149
+[09/Jul/2026 13:43:12] "GET /admin/ HTTP/1.1" 200 17829
+[09/Jul/2026 13:43:21] "GET /admin/auth/user/ HTTP/1.1" 200 42658
+[09/Jul/2026 13:43:21] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 13:43:41] "GET / HTTP/1.1" 302 0
+[09/Jul/2026 13:43:41] "GET /api/auth/me/ HTTP/1.1" 200 149
+[09/Jul/2026 14:41:41] "GET /admin/auth/user/5/change/ HTTP/1.1" 200 22992
+[09/Jul/2026 14:41:41] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 14:41:48] "POST /admin/auth/user/5/change/ HTTP/1.1" 302 0
+[09/Jul/2026 14:41:48] "GET /admin/auth/user/ HTTP/1.1" 200 42797
+[09/Jul/2026 14:41:48] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 14:41:56] "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+[09/Jul/2026 14:41:56] "POST /api/auth/logout/ HTTP/1.1" 204 0
+[09/Jul/2026 14:42:10] "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+Bad Request: /api/auth/login/
+[09/Jul/2026 14:42:11] "POST /api/auth/login/ HTTP/1.1" 400 34
+[09/Jul/2026 14:42:20] "POST /api/auth/login/ HTTP/1.1" 200 207
+C:\Users\15294\Documents\MathAPP\core\urls.py changed, reloading.
+Watching for file changes with StatReloader
+[09/Jul/2026 14:50:06] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 14:50:06] "GET /api/auth/me/ HTTP/1.1" 200 147
+[09/Jul/2026 14:50:11] "OPTIONS /api/payments/membership-orders/ HTTP/1.1" 200 0
+[09/Jul/2026 14:50:11] "POST /api/payments/membership-orders/ HTTP/1.1" 201 230
+[09/Jul/2026 14:50:11] "GET /api/payments/mock-complete/MA2026070906501151DEEBFB44/ HTTP/1.1" 302 0
+[09/Jul/2026 14:50:11] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 14:50:41] "GET /admin/ HTTP/1.1" 200 18262
+Not Found: /favicon.ico
+[09/Jul/2026 14:50:42] "GET /favicon.ico HTTP/1.1" 404 2455
+[09/Jul/2026 14:50:43] "GET /admin/auth/user/ HTTP/1.1" 200 42660
+[09/Jul/2026 14:50:43] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 14:50:58] "GET /admin/ HTTP/1.1" 200 18262
+[09/Jul/2026 14:50:58] "GET /admin/auth/user/ HTTP/1.1" 200 42660
+[09/Jul/2026 14:50:58] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 15:31:33] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 15:31:33] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 15:43:52] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 15:44:04] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 15:44:06] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 15:44:06] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 16:23:21] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 16:23:22] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 16:24:38] "GET /admin/ HTTP/1.1" 200 18262
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/css/index.css?_=3.2 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/elementui/theme-chalk/index.css HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/fontawesome-free-6.2.0-web/css/all.min.css HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/waves/waves.min.css?_=2.1 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/img/logo.png HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/elementui/umd/locale/en.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/elementui/index.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/js/vue.min.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/automatic/dicts.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/automatic/segment.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/locale/en-us.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/locale/zh-hans.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/js/cookie.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/theme/theme.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/js/menu.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/waves/waves.min.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:38] "GET /static/admin/simpleui-x/js/index.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:39] "GET /static/admin/simpleui-x/theme/element.css HTTP/1.1" 304 0
+[09/Jul/2026 16:24:39] "GET /static/admin/simpleui-x/fontawesome-free-6.2.0-web/webfonts/fa-brands-400.woff2 HTTP/1.1" 304 0
+[09/Jul/2026 16:24:39] "GET /static/admin/simpleui-x/elementui/theme-chalk/fonts/element-icons.woff HTTP/1.1" 304 0
+[09/Jul/2026 16:24:39] "GET /static/admin/simpleui-x/fontawesome-free-6.2.0-web/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[09/Jul/2026 16:24:39] "GET /favicon.ico HTTP/1.1" 404 2455
+[09/Jul/2026 16:24:43] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 16:24:43] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 16:25:47] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 16:25:47] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 16:27:54] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 16:27:54] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 16:33:22] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 16:33:22] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 16:41:40] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 16:41:40] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 16:49:26] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 16:49:26] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 16:52:06] "GET /admin/ HTTP/1.1" 200 18262
+Not Found: /favicon.ico
+[09/Jul/2026 16:52:06] "GET /favicon.ico HTTP/1.1" 404 2455
+[09/Jul/2026 16:52:08] "GET /admin/auth/user/ HTTP/1.1" 200 42660
+[09/Jul/2026 16:52:08] "GET /static/admin/simpleui-x/css/base.css?_=2.7 HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/css/base.css?_=2.7 HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/simpleui-x/theme/simpleui.css HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/simpleui-x/locale/zh-hans.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/simpleui-x/js/language.js?_=2.1.2 HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/simpleui-x/js/cookie.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/simpleui-x/locale/en-us.js?_=2.1.2 HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/css/changelists.css?_=20180905 HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/css/responsive.css?_=20180905 HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/simpleui-x/automatic/dicts.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/simpleui-x/automatic/segment.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/simpleui-x/js/axios.min.js HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[09/Jul/2026 16:52:08] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 16:52:08] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+[09/Jul/2026 16:52:10] "GET /admin/auth/group/ HTTP/1.1" 200 29400
+[09/Jul/2026 16:52:10] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 16:57:54] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 16:57:55] "GET /api/auth/me/ HTTP/1.1" 200 148
+C:\Users\15294\Documents\MathAPP\mathapp\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\15294\Documents\MathAPP\mathapp\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\15294\Documents\MathAPP\content\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+[09/Jul/2026 17:25:45] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 17:25:45] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 17:25:46] "OPTIONS /api/content/courses/ HTTP/1.1" 200 0
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 17:25:47] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 17:25:49] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 17:25:49] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 17:25:52] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 17:25:53] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 17:25:54] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 17:25:54] "GET /api/content/courses/ HTTP/1.1" 500 169758
+[09/Jul/2026 17:26:04] "GET /admin/ HTTP/1.1" 200 18650
+Not Found: /favicon.ico
+[09/Jul/2026 17:26:04] "GET /favicon.ico HTTP/1.1" 404 2567
+Internal Server Error: /admin/content/course/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: SELECT COUNT(*) AS "__count" FROM "content_course"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 689, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 1927, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 837, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 123, in __init__
+    self.get_results(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 279, in get_results
+    result_count = paginator.count
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\paginator.py", line 93, in count
+    return c()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\query.py", line 570, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\query.py", line 556, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: SELECT COUNT(*) AS "__count" FROM "content_course"
+                                          ^
+
+[09/Jul/2026 17:26:06] "GET /admin/content/course/ HTTP/1.1" 500 179740
+Internal Server Error: /admin/content/chapter/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 689, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 1927, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 837, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 503, in get_queryset
+    ) = self.get_filters(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 182, in get_filters
+    spec = field_list_filter_class(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\filters.py", line 175, in create
+    return list_filter_class(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\filters.py", line 188, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\filters.py", line 225, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\fields\__init__.py", line 1009, in get_choices
+    return (blank_choice if include_blank else []) + [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 17:26:10] "GET /admin/content/chapter/ HTTP/1.1" 500 200267
+Internal Server Error: /admin/content/section/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 689, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 1927, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 837, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 503, in get_queryset
+    ) = self.get_filters(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 182, in get_filters
+    spec = field_list_filter_class(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\filters.py", line 175, in create
+    return list_filter_class(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\filters.py", line 188, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\filters.py", line 225, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\fields\__init__.py", line 1009, in get_choices
+    return (blank_choice if include_blank else []) + [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 17:26:10] "GET /admin/content/section/ HTTP/1.1" 500 200387
+[09/Jul/2026 17:26:13] "GET /admin/auth/user/ HTTP/1.1" 200 42660
+[09/Jul/2026 17:26:13] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 20:24:35] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 20:24:35] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 20:24:38] "GET /admin/ HTTP/1.1" 200 18650
+Not Found: /favicon.ico
+[09/Jul/2026 20:24:38] "GET /favicon.ico HTTP/1.1" 404 2567
+[09/Jul/2026 20:24:39] "OPTIONS /api/content/courses/ HTTP/1.1" 200 0
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 20:24:39] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /admin/content/course/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: SELECT COUNT(*) AS "__count" FROM "content_course"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 689, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 1927, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\options.py", line 837, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 123, in __init__
+    self.get_results(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\contrib\admin\views\main.py", line 279, in get_results
+    result_count = paginator.count
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\paginator.py", line 93, in count
+    return c()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\query.py", line 570, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\query.py", line 556, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: SELECT COUNT(*) AS "__count" FROM "content_course"
+                                          ^
+
+[09/Jul/2026 20:24:51] "GET /admin/content/course/ HTTP/1.1" 500 179740
+[09/Jul/2026 20:27:26] "GET /api/auth/me/ HTTP/1.1" 200 148
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 20:27:28] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 20:27:29] "GET /api/content/courses/ HTTP/1.1" 500 169758
+[09/Jul/2026 20:27:30] "GET /api/auth/me/ HTTP/1.1" 200 148
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 20:27:30] "GET /api/content/courses/ HTTP/1.1" 500 169758
+[09/Jul/2026 20:27:33] "GET /admin/ HTTP/1.1" 200 18650
+[09/Jul/2026 20:27:34] "GET /admin/ HTTP/1.1" 200 18650
+[09/Jul/2026 20:32:58] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 20:32:58] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 20:33:07] "OPTIONS /api/content/courses/ HTTP/1.1" 200 0
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 20:33:07] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 20:33:07] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 20:33:10] "GET /api/content/courses/ HTTP/1.1" 500 169758
+Internal Server Error: /api/content/courses/
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\15294\Documents\MathAPP\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: 错误:  关系 "content_course" 不存在
+LINE 1: ...."created_at", "content_course"."updated_at" FROM "content_c...
+                                                             ^
+
+[09/Jul/2026 20:33:11] "GET /api/content/courses/ HTTP/1.1" 500 169758
+[09/Jul/2026 20:34:56] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 20:34:57] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 20:34:57] "OPTIONS /api/content/courses/ HTTP/1.1" 200 0
+[09/Jul/2026 20:34:58] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 20:34:59] "OPTIONS /api/content/courses/calculus/ HTTP/1.1" 200 0
+[09/Jul/2026 20:34:59] "GET /api/content/courses/calculus/ HTTP/1.1" 200 979
+[09/Jul/2026 20:34:59] "OPTIONS /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 0
+[09/Jul/2026 20:34:59] "GET /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 2973
+[09/Jul/2026 20:35:02] "OPTIONS /api/content/sections/calculus-limits-function/ HTTP/1.1" 200 0
+[09/Jul/2026 20:35:03] "GET /api/content/sections/calculus-limits-function/ HTTP/1.1" 200 1056
+[09/Jul/2026 20:35:03] "GET /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 2973
+[09/Jul/2026 20:35:04] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 20:35:05] "GET /api/content/courses/calculus/ HTTP/1.1" 200 979
+[09/Jul/2026 20:35:05] "OPTIONS /api/content/sections/calculus-exercises-limit-basic/ HTTP/1.1" 200 0
+[09/Jul/2026 20:35:05] "GET /api/content/sections/calculus-exercises-limit-basic/ HTTP/1.1" 200 611
+[09/Jul/2026 20:35:11] "OPTIONS /api/content/courses/linear-algebra/ HTTP/1.1" 200 0
+[09/Jul/2026 20:35:11] "GET /api/content/courses/linear-algebra/ HTTP/1.1" 200 828
+[09/Jul/2026 20:35:11] "OPTIONS /api/content/sections/linear-algebra-matrix-row-reduction/ HTTP/1.1" 200 0
+[09/Jul/2026 20:35:11] "GET /api/content/sections/linear-algebra-matrix-row-reduction/ HTTP/1.1" 200 432
+[09/Jul/2026 20:35:14] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 20:48:40] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 20:48:40] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 20:48:41] "OPTIONS /api/content/courses/ HTTP/1.1" 200 0
+[09/Jul/2026 20:48:42] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 20:48:43] "OPTIONS /api/content/courses/calculus/ HTTP/1.1" 200 0
+[09/Jul/2026 20:48:43] "GET /api/content/courses/calculus/ HTTP/1.1" 200 979
+[09/Jul/2026 20:48:43] "OPTIONS /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 0
+[09/Jul/2026 20:48:43] "GET /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 2973
+[09/Jul/2026 20:48:44] "OPTIONS /api/content/sections/calculus-limits-function/ HTTP/1.1" 200 0
+[09/Jul/2026 20:48:44] "GET /api/content/sections/calculus-limits-function/ HTTP/1.1" 200 1056
+[09/Jul/2026 20:48:45] "GET /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 2973
+[09/Jul/2026 20:53:09] "GET /api/content/sections/calculus-limits-function/ HTTP/1.1" 200 1056
+[09/Jul/2026 20:53:10] "GET /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 2973
+[09/Jul/2026 21:01:46] "GET /admin/ HTTP/1.1" 200 18650
+Not Found: /favicon.ico
+[09/Jul/2026 21:01:46] "GET /favicon.ico HTTP/1.1" 404 2567
+[09/Jul/2026 21:01:49] "GET /admin/content/course/ HTTP/1.1" 200 34700
+[09/Jul/2026 21:01:49] "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[09/Jul/2026 21:01:49] "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[09/Jul/2026 21:01:49] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 21:01:54] "GET /admin/content/chapter/ HTTP/1.1" 200 40439
+[09/Jul/2026 21:01:54] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 21:02:02] "GET /admin/content/section/ HTTP/1.1" 200 41917
+[09/Jul/2026 21:02:02] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 21:02:18] "GET /admin/content/chapter/?o=1.3.5 HTTP/1.1" 200 41450
+[09/Jul/2026 21:02:18] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 21:02:19] "GET /admin/content/chapter/?o=2.1.3.5 HTTP/1.1" 200 42092
+[09/Jul/2026 21:02:20] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 21:02:21] "GET /admin/content/chapter/?o=2.-1.3.5 HTTP/1.1" 200 42111
+[09/Jul/2026 21:02:21] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+C:\Users\15294\Documents\MathAPP\content\models.py changed, reloading.
+Watching for file changes with StatReloader
+[09/Jul/2026 21:19:31] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 21:19:31] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 21:19:33] "OPTIONS /api/content/courses/ HTTP/1.1" 200 0
+[09/Jul/2026 21:19:33] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 21:19:34] "OPTIONS /api/content/courses/calculus/ HTTP/1.1" 200 0
+[09/Jul/2026 21:19:34] "GET /api/content/courses/calculus/ HTTP/1.1" 200 979
+[09/Jul/2026 21:19:34] "OPTIONS /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 0
+[09/Jul/2026 21:19:34] "GET /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 2973
+[09/Jul/2026 21:19:38] "GET /admin/ HTTP/1.1" 200 18650
+Not Found: /favicon.ico
+[09/Jul/2026 21:19:38] "GET /favicon.ico HTTP/1.1" 404 2567
+[09/Jul/2026 21:44:59] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 22:15:39] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 22:15:39] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 22:15:40] "OPTIONS /api/content/courses/ HTTP/1.1" 200 0
+[09/Jul/2026 22:15:40] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 22:15:41] "OPTIONS /api/content/courses/calculus/ HTTP/1.1" 200 0
+[09/Jul/2026 22:15:41] "GET /api/content/courses/calculus/ HTTP/1.1" 200 979
+[09/Jul/2026 22:15:41] "OPTIONS /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 0
+[09/Jul/2026 22:15:41] "GET /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 2973
+[09/Jul/2026 22:15:45] "OPTIONS /api/content/sections/calculus-limits-function/ HTTP/1.1" 200 0
+[09/Jul/2026 22:15:45] "GET /api/content/sections/calculus-limits-function/ HTTP/1.1" 200 1056
+[09/Jul/2026 22:15:48] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 22:15:49] "OPTIONS /api/content/courses/linear-algebra/ HTTP/1.1" 200 0
+[09/Jul/2026 22:15:50] "GET /api/content/courses/linear-algebra/ HTTP/1.1" 200 828
+[09/Jul/2026 22:15:50] "OPTIONS /api/content/sections/linear-algebra-matrix-row-reduction/ HTTP/1.1" 200 0
+[09/Jul/2026 22:15:50] "GET /api/content/sections/linear-algebra-matrix-row-reduction/ HTTP/1.1" 200 432
+[09/Jul/2026 22:15:55] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 22:15:59] "OPTIONS /api/content/courses/probability/ HTTP/1.1" 200 0
+[09/Jul/2026 22:15:59] "GET /api/content/courses/probability/ HTTP/1.1" 200 849
+[09/Jul/2026 22:15:59] "OPTIONS /api/content/sections/probability-conditional-probability/ HTTP/1.1" 200 0
+[09/Jul/2026 22:15:59] "GET /api/content/sections/probability-conditional-probability/ HTTP/1.1" 200 807
+[09/Jul/2026 22:24:35] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 22:24:35] "GET /api/auth/me/ HTTP/1.1" 200 148
+[09/Jul/2026 22:24:38] "GET /admin/ HTTP/1.1" 200 18650
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/elementui/theme-chalk/index.css HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/fontawesome-free-6.2.0-web/css/all.min.css HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/css/index.css?_=3.2 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/waves/waves.min.css?_=2.1 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/elementui/index.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/elementui/umd/locale/en.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/img/logo.png HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/automatic/dicts.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/automatic/segment.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/js/vue.min.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/locale/en-us.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/locale/zh-hans.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/js/menu.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/theme/theme.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/js/index.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/js/cookie.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/waves/waves.min.js?_=2026.01.13 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/theme/element.css HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/fontawesome-free-6.2.0-web/webfonts/fa-brands-400.woff2 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/fontawesome-free-6.2.0-web/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:38] "GET /static/admin/simpleui-x/elementui/theme-chalk/fonts/element-icons.woff HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[09/Jul/2026 22:24:38] "GET /favicon.ico HTTP/1.1" 404 2567
+[09/Jul/2026 22:24:46] "GET /admin/auth/user/ HTTP/1.1" 200 42660
+[09/Jul/2026 22:24:46] "GET /static/admin/simpleui-x/theme/simpleui.css HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/simpleui-x/css/base.css?_=2.7 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/simpleui-x/js/language.js?_=2.1.2 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/simpleui-x/locale/zh-hans.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/css/base.css?_=2.7 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/simpleui-x/locale/en-us.js?_=2.1.2 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/css/responsive.css?_=20180905 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/css/changelists.css?_=20180905 HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/simpleui-x/js/cookie.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/simpleui-x/automatic/segment.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/simpleui-x/automatic/dicts.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/simpleui-x/js/axios.min.js HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[09/Jul/2026 22:24:46] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 22:24:46] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+[09/Jul/2026 22:24:48] "GET /admin/content/chapter/ HTTP/1.1" 200 40439
+[09/Jul/2026 22:24:48] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 22:24:48] "GET /admin/content/course/ HTTP/1.1" 200 34700
+[09/Jul/2026 22:24:49] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 22:24:49] "GET /admin/content/section/ HTTP/1.1" 200 41917
+[09/Jul/2026 22:24:49] "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+[09/Jul/2026 22:24:55] "OPTIONS /api/content/courses/ HTTP/1.1" 200 0
+[09/Jul/2026 22:24:55] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 22:24:56] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 22:25:01] "OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+[09/Jul/2026 22:25:01] "POST /api/auth/logout/ HTTP/1.1" 204 0
+[09/Jul/2026 22:25:04] "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+[09/Jul/2026 22:25:05] "POST /api/auth/login/ HTTP/1.1" 200 209
+[09/Jul/2026 22:25:16] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 22:25:17] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 22:25:19] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 23:21:34] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 23:21:35] "GET /api/auth/me/ HTTP/1.1" 200 149
+[09/Jul/2026 23:21:36] "OPTIONS /api/content/courses/ HTTP/1.1" 200 0
+[09/Jul/2026 23:21:36] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 23:21:39] "OPTIONS /api/content/courses/calculus/ HTTP/1.1" 200 0
+[09/Jul/2026 23:21:39] "GET /api/content/courses/calculus/ HTTP/1.1" 200 979
+[09/Jul/2026 23:21:39] "OPTIONS /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 0
+[09/Jul/2026 23:21:39] "GET /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 2973
+[09/Jul/2026 23:21:56] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 23:21:56] "GET /api/auth/me/ HTTP/1.1" 200 149
+[09/Jul/2026 23:21:59] "OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+[09/Jul/2026 23:21:59] "GET /api/auth/me/ HTTP/1.1" 200 149
+[09/Jul/2026 23:22:01] "OPTIONS /api/content/courses/ HTTP/1.1" 200 0
+[09/Jul/2026 23:22:01] "GET /api/content/courses/ HTTP/1.1" 200 916
+[09/Jul/2026 23:22:02] "OPTIONS /api/content/courses/calculus/ HTTP/1.1" 200 0
+[09/Jul/2026 23:22:02] "GET /api/content/courses/calculus/ HTTP/1.1" 200 979
+[09/Jul/2026 23:22:02] "OPTIONS /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 0
+[09/Jul/2026 23:22:03] "GET /api/content/sections/calculus-limits-sequence/ HTTP/1.1" 200 2973
+[09/Jul/2026 23:47:30] "GET /api/content/courses/ HTTP/1.1" 200 916
