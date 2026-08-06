@@ -1453,6 +1453,10 @@ p {
   box-shadow: inset 4px 0 0 #9a6a3d;
 }
 
+.tpl-block .md-editor {
+  background: transparent;
+}
+
 .block-head {
   display: flex;
   gap: 10px;
