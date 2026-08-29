@@ -47,10 +47,34 @@ onBeforeUnmount(() => {
 
 // 首页展陈文案，不是课程内容，不需要走后台内容管理。
 
+// 三张卡片各配一幅圆规直尺作图，跟页尾那张欧氏命题一是同一套语言：
+// 圆是圆规留下的痕迹，多边形是直尺连出的结论。
+// 顶点坐标都在半径 40 的圆上，是真的内接正多边形，不是描出来的形状。
+const FIGURES = {
+  // 正六边形：圆规张成半径，绕圆走六步就回到原点（《几何原本》IV.15）
+  hexagon: {
+    poly: '0,-40 34.64,-20 34.64,20 0,40 -34.64,20 -34.64,-20',
+    lines: [],
+  },
+  // 正方形与两条对角线（IV.6），对角线与边之比就是 √2
+  square: {
+    poly: '28.28,-28.28 28.28,28.28 -28.28,28.28 -28.28,-28.28',
+    lines: [
+      [-28.28, -28.28, 28.28, 28.28],
+      [-28.28, 28.28, 28.28, -28.28],
+    ],
+  },
+  // 五角星：内接正五边形隔点连线（IV.11），线段之比即黄金分割
+  pentagram: {
+    poly: '0,-40 23.51,32.36 -38.04,-12.36 38.04,-12.36 -23.51,32.36',
+    lines: [],
+  },
+}
+
 // 三个学习入口。
 const halls = [
   {
-    numeral: 'I',
+    figure: 'hexagon',
     eyebrow: '01 · 系统学习',
     title: '知识库',
     copy: '从概念、定理到例题，按章节把容易断开的知识点重新连起来。',
@@ -59,7 +83,7 @@ const halls = [
     tone: 'forest',
   },
   {
-    numeral: 'II',
+    figure: 'square',
     eyebrow: '02 · 针对训练',
     title: '习题库',
     copy: '按题型、难度与完成状态筛选，解析留到你需要的时候再展开。',
@@ -68,7 +92,7 @@ const halls = [
     tone: 'terra',
   },
   {
-    numeral: 'III',
+    figure: 'pentagram',
     eyebrow: '03 · 持续更新',
     title: '会员内容',
     copy: '课程讲义、会员题组、视频讲解与互动图形，持续增补。',
@@ -78,68 +102,6 @@ const halls = [
   },
 ]
 
-// 底部年表：人、著作、年份、贡献放在一起讲。
-// 之前这里只有书名，另有一节「名录」单独列同样这 6 位数学家的肖像卡片——
-// 而那 6 张肖像在上面的画廊墙里已经出现过一次，同一批人在一页里出现三遍。
-// 现在合并成一条年表：有肖像的条目配头像和一句贡献，其余只留年份和书名，
-// 长短交错反而比 12 行一模一样的条目更有节奏。
-const canon = [
-  {
-    who: '欧几里得',
-    work: '几何原本',
-    year: '约前 300',
-    portrait: 'euclid.jpg',
-    accent: '#bfaf9e',
-    note: '把零散的几何事实收进公理与证明的秩序里。',
-  },
-  { who: '阿基米德', work: '圆的度量', year: '约前 250' },
-  { who: '笛卡尔', work: '几何学', year: '1637' },
-  {
-    who: '牛顿',
-    work: '自然哲学的数学原理',
-    year: '1687',
-    portrait: 'newton.jpg',
-    accent: '#9fb8c9',
-    note: '用变化率重写运动，微积分从此有了物理的重量。',
-  },
-  {
-    who: '欧拉',
-    work: '无穷分析引论',
-    year: '1748',
-    portrait: 'euler.jpg',
-    accent: '#c9a86a',
-    note: '级数、函数与复数在他笔下第一次连成一体。',
-  },
-  {
-    who: '高斯',
-    work: '算术研究',
-    year: '1801',
-    portrait: 'gauss.jpg',
-    accent: '#c98a7a',
-    note: '消元法与正态分布，至今仍是代数与统计的地基。',
-  },
-  {
-    who: '拉普拉斯',
-    work: '概率的分析理论',
-    year: '1812',
-    portrait: 'laplace.jpg',
-    accent: '#8fb3a6',
-    note: '让偶然可以被计算，概率因此成为一门学科。',
-  },
-  {
-    who: '柯西',
-    work: '分析教程',
-    year: '1821',
-    portrait: 'cauchy.jpg',
-    accent: '#a9b2b5',
-    note: '一句 ε–N，把「无限接近」从直觉变成可验证的语言。',
-  },
-  { who: '黎曼', work: '论几何学的基础假设', year: '1854' },
-  { who: '康托尔', work: '超穷数理论基础', year: '1895' },
-  { who: '希尔伯特', work: '几何基础', year: '1899' },
-  { who: '柯尔莫哥洛夫', work: '概率论基础', year: '1933' },
-]
-
 // 一节讲义由哪些模块组成。取自 docs/TEMPLATE_GUIDE.md 里真实支持的指令，
 // 不是编出来的功能清单。
 const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图像与互动', '视频讲解']
@@ -147,34 +109,63 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
 
 <template>
   <div ref="root" class="salon">
-    <!-- 首屏 -->
+    <!-- 首屏：整个按中世纪科学抄本的开卷页重排。
+         抄本正文是左对齐的文本块（居中大标题是现代印刷的做法），
+         左边一条竖界栏划出书写区，图解画在页边——大学用的欧几里得、
+         波爱修斯抄本都是这个样子。 -->
     <header class="salon-hero">
-      <p class="hero-eyebrow"><span>MathAPP</span><i></i><span>在线数学学习</span></p>
+      <div class="hero-page">
+        <div class="hero-block">
+          <p class="hero-incipit">
+            <span>MathAPP</span><i></i><span>在线数学学习</span>
+          </p>
 
-      <h1 class="hero-title">
-        <span class="hero-echo" aria-hidden="true">数之形</span>
-        <span class="hero-line">数之形</span>
-        <span class="hero-line hero-line-alt">理之序</span>
-      </h1>
+          <h1 class="hero-title">
+            <span class="hero-line">数之形</span>
+            <span class="hero-line hero-line-alt">理之序</span>
+          </h1>
 
-      <!-- 这个位置原来是「约前 300 —— 至今」，好看但不传递任何产品信息。
-           首屏最显眼的一行应该让人三秒内知道"这里有我要的课"。 -->
-      <p class="hero-courses">
-        <span>微积分</span><i></i><span>线性代数</span><i></i><span>概率统计</span>
-      </p>
+          <p class="hero-courses">
+            <span>微积分</span><i></i><span>线性代数</span><i></i><span>概率统计</span>
+          </p>
 
-      <p class="hero-lede">
-        为期末、考研与竞赛准备的大学数学。<br />
-        讲义、习题与解析在同一处，按自己的节奏把数学学扎实。
-      </p>
+          <!-- 花体首字开卷：抄本的装饰首字母就是用来起正文的。
+               「大」既是装饰也是正文第一个字，没有重复。 -->
+          <p class="hero-lede">
+            <span class="hero-initial">大</span>学数学的讲义、习题与解析放在同一处。
+            为期末、考研与竞赛准备，按自己的节奏，从第一个定义走到能自己写出证明。
+          </p>
 
-      <div class="hero-actions">
-        <RouterLink class="plate-link" to="/knowledge">
-          <span>进入知识库</span><i aria-hidden="true">→</i>
-        </RouterLink>
-        <RouterLink class="plate-link plate-link-ghost" to="/exercises">
-          <span>查看习题库</span><i aria-hidden="true">→</i>
-        </RouterLink>
+          <div class="hero-actions">
+            <RouterLink class="plate-link" to="/knowledge">
+              <span>进入知识库</span><i aria-hidden="true">→</i>
+            </RouterLink>
+            <RouterLink class="plate-link plate-link-ghost" to="/exercises">
+              <span>查看习题库</span><i aria-hidden="true">→</i>
+            </RouterLink>
+          </div>
+        </div>
+
+        <!-- 页边图解：两个正三角互叠成六芒星，六个交点正好落在
+             半径 100/√3 ≈ 57.7 的同心圆上。这是能验算的，不是画着好看。 -->
+        <figure class="hero-figure">
+          <svg viewBox="-124 -124 248 248" class="hero-diagram" role="img"
+               aria-label="圆内接六芒星，六个交点落在同心圆上">
+            <circle class="hero-arc" cx="0" cy="0" r="100" />
+            <circle class="hero-arc hero-arc-inner" cx="0" cy="0" r="57.74" />
+            <polygon class="hero-rule" points="0,-100 86.6,50 -86.6,50" />
+            <polygon class="hero-rule" points="0,100 86.6,-50 -86.6,-50" />
+            <g class="hero-node">
+              <circle cx="0" cy="-100" r="3" />
+              <circle cx="86.6" cy="-50" r="3" />
+              <circle cx="86.6" cy="50" r="3" />
+              <circle cx="0" cy="100" r="3" />
+              <circle cx="-86.6" cy="50" r="3" />
+              <circle cx="-86.6" cy="-50" r="3" />
+            </g>
+          </svg>
+          <figcaption>两个正三角互叠，六个交点落在同一个内圆上</figcaption>
+        </figure>
       </div>
     </header>
 
@@ -197,7 +188,19 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
           :class="`tone-${hall.tone}`"
           :to="hall.to"
         >
-          <span class="hall-numeral" aria-hidden="true">{{ hall.numeral }}</span>
+          <svg class="hall-figure" viewBox="-52 -52 104 104" aria-hidden="true">
+            <circle class="hall-arc" cx="0" cy="0" r="40" />
+            <polygon class="hall-rule" :points="FIGURES[hall.figure].poly" />
+            <line
+              v-for="(seg, si) in FIGURES[hall.figure].lines"
+              :key="si"
+              class="hall-rule-line"
+              :x1="seg[0]"
+              :y1="seg[1]"
+              :x2="seg[2]"
+              :y2="seg[3]"
+            />
+          </svg>
           <p class="hall-eyebrow">{{ hall.eyebrow }}</p>
           <h3 class="hall-title">{{ hall.title }}</h3>
           <p class="hall-copy">{{ hall.copy }}</p>
@@ -228,9 +231,12 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
             <p class="sheet-block-head">
               <span class="sheet-chip">定义 1</span><span>数列极限</span>
             </p>
-            <p class="sheet-text">
-              设 <em>{aₙ}</em> 是一个数列，<em>A</em> 是一个常数。如果对任意
-              <em>ε &gt; 0</em>，总存在正整数 <em>N</em>，使得当 <em>n &gt; N</em> 时都有
+            <!-- 起首字：抄本每段正文开头的花体首字母。这里的「设」既是装饰也是
+                 正文的第一个字，没有重复，读屏软件读到的仍是完整句子。 -->
+            <p class="sheet-text sheet-text-open">
+              <span class="sheet-initial">设</span><em>{aₙ}</em> 是一个数列，<em>A</em>
+              是一个常数。如果对任意 <em>ε &gt; 0</em>，总存在正整数 <em>N</em>，使得当
+              <em>n &gt; N</em> 时都有
             </p>
             <p class="sheet-formula">| aₙ − A | &lt; ε</p>
             <p class="sheet-text">则称数列 <em>{aₙ}</em> 收敛于 <em>A</em>。</p>
@@ -262,44 +268,52 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
       </div>
     </section>
 
-    <!-- 经典著作 -->
-    <section class="salon-section salon-canon">
-      <div class="section-rule section-rule-light">
-        <span class="rule-label">经典著作</span>
-        <span class="rule-line"></span>
-        <span class="rule-note">写进教科书之前，它们先是某个人的手稿</span>
+    <!-- 收尾：仿中世纪手抄本的书末题记。
+         图不是装饰画，是《几何原本》第一卷命题一的真实作图——
+         两段圆规弧交于一点，连成等边三角形。中世纪欧洲大学的学生
+         学几何，第一页画的就是这个。 -->
+    <section class="salon-section salon-colophon">
+      <div class="colophon-grid">
+        <figure class="colophon-figure reveal">
+          <svg viewBox="-118 -112 336 226" class="construction" role="img"
+               aria-label="《几何原本》第一卷命题一：在给定线段上作等边三角形">
+            <!-- 圆规画出的两段弧 -->
+            <circle class="arc" cx="0" cy="0" r="100" />
+            <circle class="arc" cx="100" cy="0" r="100" />
+            <!-- 直尺连出的三角形 -->
+            <path class="rule" d="M 0 0 L 100 0 L 50 -86.6 Z" />
+            <!-- 三个交点 -->
+            <circle class="node" cx="0" cy="0" r="3.2" />
+            <circle class="node" cx="100" cy="0" r="3.2" />
+            <circle class="node" cx="50" cy="-86.6" r="3.2" />
+            <text class="mark" x="-12" y="14">A</text>
+            <text class="mark" x="106" y="14">B</text>
+            <text class="mark" x="44" y="-96">Γ</text>
+          </svg>
+          <figcaption>命题一 · 在给定的有限直线上作一个等边三角形</figcaption>
+        </figure>
+
+        <div class="colophon-copy reveal">
+          <p class="colophon-eyebrow">从第一个命题开始</p>
+          <h2 class="colophon-title">方法八百年没变</h2>
+          <p class="colophon-text">
+            中世纪欧洲的大学把几何列进必修的四艺，学生翻开《几何原本》的第一页，
+            照着抄一遍图，再自己用圆规和直尺重做一次。
+          </p>
+          <p class="colophon-text">
+            先看懂一个证明，再亲手做一遍——这件事到今天也没有更省力的替代品。
+            我们把讲义和习题放在一起，就是为了让这两步不用来回切换。
+          </p>
+          <div class="colophon-actions">
+            <RouterLink class="plate-link" to="/knowledge">
+              <span>进入知识库</span><i aria-hidden="true">→</i>
+            </RouterLink>
+            <RouterLink class="plate-link plate-link-ghost" to="/membership">
+              <span>查看会员</span><i aria-hidden="true">→</i>
+            </RouterLink>
+          </div>
+        </div>
       </div>
-
-      <ol class="canon-list">
-        <li
-          v-for="entry in canon"
-          :key="entry.work"
-          class="canon-item reveal"
-          :class="{ 'canon-item-major': entry.portrait }"
-        >
-          <span class="canon-year">{{ entry.year }}</span>
-
-          <span class="canon-marker" aria-hidden="true">
-            <img
-              v-if="entry.portrait"
-              :src="`/portraits/${entry.portrait}`"
-              alt=""
-              loading="lazy"
-              decoding="async"
-              :style="{ borderColor: entry.accent }"
-            />
-            <span v-else class="canon-dot"></span>
-          </span>
-
-          <span class="canon-body">
-            <span class="canon-head">
-              <span class="canon-author">{{ entry.who }}</span>
-              <span class="canon-work">《{{ entry.work }}》</span>
-            </span>
-            <span v-if="entry.note" class="canon-note">{{ entry.note }}</span>
-          </span>
-        </li>
-      </ol>
     </section>
   </div>
 </template>
@@ -318,6 +332,8 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
   --ochre: #b8863c;
   --terra: #a63c2c;
   --slate: #3c4446;
+  /* 朱砂：抄本里写章节题名和记号用的红墨水 */
+  --rubric: #9c3b2e;
 
   --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, SimSun,
     Georgia, "Times New Roman", serif;
@@ -328,12 +344,16 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
   margin-bottom: -52px;
   padding: clamp(40px, 6vw, 96px) clamp(20px, 5vw, 88px) clamp(56px, 7vw, 104px);
   background-color: var(--parch);
-  /* 画布纹理：斜向织纹 + 四角压暗，模拟油画的画布与暗角 */
+  /* 羊皮纸，不是画布。原来铺的是 45° 交叉织纹——那是绷在框上的油画布纹理；
+     羊皮纸是兽皮，没有经纬，只有大小不一的斑驳和边缘的陈旧。
+     所以改成几团错落的暖褐晕染，再压暗四角。 */
   background-image:
-    radial-gradient(120% 90% at 50% 0%, rgba(255, 253, 247, 0.9), transparent 60%),
-    radial-gradient(100% 100% at 50% 100%, rgba(107, 88, 68, 0.16), transparent 70%),
-    repeating-linear-gradient(45deg, rgba(107, 88, 68, 0.035) 0 2px, transparent 2px 4px),
-    repeating-linear-gradient(-45deg, rgba(107, 88, 68, 0.03) 0 2px, transparent 2px 4px);
+    radial-gradient(58% 44% at 18% 12%, rgba(107, 88, 68, 0.07), transparent 62%),
+    radial-gradient(46% 38% at 82% 30%, rgba(122, 96, 66, 0.06), transparent 66%),
+    radial-gradient(52% 40% at 34% 66%, rgba(107, 88, 68, 0.05), transparent 64%),
+    radial-gradient(40% 34% at 74% 84%, rgba(140, 110, 74, 0.05), transparent 62%),
+    radial-gradient(120% 90% at 50% 0%, rgba(255, 253, 247, 0.85), transparent 58%),
+    radial-gradient(100% 100% at 50% 100%, rgba(107, 88, 68, 0.18), transparent 70%);
   color: var(--ink);
   font-family: var(--serif);
 }
@@ -343,42 +363,72 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
   position: relative;
   max-width: 1180px;
   margin: 0 auto clamp(64px, 8vw, 120px);
-  text-align: center;
 }
 
-.hero-eyebrow {
-  display: flex;
-  gap: 14px;
+/* 书页：外一圈双线界栏，抄本每页都先划好边框再写字 */
+.hero-page {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px);
   align-items: center;
-  justify-content: center;
-  margin: 0 0 clamp(20px, 3vw, 38px);
-  color: var(--umber);
+  padding: clamp(30px, 4.5vw, 64px) clamp(24px, 4vw, 56px);
+  border: 1px solid rgba(107, 88, 68, 0.42);
+  box-shadow:
+    inset 0 0 0 1px rgba(242, 236, 224, 0.75),
+    inset 0 0 0 2px rgba(107, 88, 68, 0.18);
+}
+
+/* 书写区：左对齐。居中大标题是现代印刷的排法，抄本正文是成栏的文本块。 */
+.hero-block {
+  position: relative;
+  padding-left: clamp(18px, 2.2vw, 30px);
+  text-align: left;
+}
+
+/* 左界栏：划栏留下的竖线，朱砂一条、褐色一条 */
+.hero-block::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  border-left: 1px solid rgba(156, 59, 46, 0.5);
+  border-right: 1px solid rgba(191, 175, 158, 0.7);
+}
+
+/* 卷首题（incipit）：抄本开卷第一行用朱砂写 */
+.hero-incipit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 0 0 clamp(16px, 2.4vw, 26px);
+  color: var(--rubric);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.34em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
 }
 
-.hero-eyebrow i {
-  width: 40px;
+.hero-incipit i {
+  width: 34px;
   height: 1px;
   background: currentColor;
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 .hero-title {
-  position: relative;
   margin: 0;
-  font-size: clamp(58px, 12vw, 154px);
+  font-size: clamp(46px, 7.2vw, 100px);
   font-weight: 500;
-  line-height: 0.92;
-  letter-spacing: 0.06em;
+  line-height: 1.04;
+  letter-spacing: 0.08em;
 }
 
 .hero-line {
   display: block;
-  position: relative;
-  z-index: 1;
 }
 
 .hero-line-alt {
@@ -386,52 +436,105 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
   font-style: italic;
 }
 
-/* 背后的一层回声，标题字重复叠印出立体感 */
-.hero-echo {
-  position: absolute;
-  top: -0.14em;
-  left: 50%;
-  z-index: 0;
-  transform: translateX(-50%);
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(107, 88, 68, 0.22);
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-}
-
 .hero-courses {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
   align-items: center;
-  justify-content: center;
-  margin: clamp(26px, 3.5vw, 44px) 0 0;
+  margin: clamp(20px, 2.6vw, 32px) 0 0;
   color: var(--ink);
-  font-size: clamp(14px, 1.4vw, 17px);
-  letter-spacing: 0.2em;
+  font-size: clamp(13px, 1.2vw, 16px);
+  letter-spacing: 0.18em;
 }
 
+/* 分隔用小菱形，抄本断句用的是点、菱这类记号，不是横线 */
 .hero-courses i {
-  width: clamp(28px, 4vw, 56px);
-  height: 1px;
-  background: var(--taupe);
+  width: 5px;
+  height: 5px;
+  background: var(--rubric);
+  opacity: 0.75;
+  transform: rotate(45deg);
 }
 
 .hero-lede {
-  max-width: 620px;
-  margin: clamp(28px, 3.5vw, 44px) auto 0;
+  margin: clamp(20px, 2.6vw, 30px) 0 0;
   color: var(--ink-soft);
-  font-size: clamp(15px, 1.5vw, 18px);
-  line-height: 2;
+  font-size: clamp(14.5px, 1.35vw, 16.5px);
+  line-height: 2.05;
+}
+
+/* 首字是浮动的，清一下免得影响下面的按钮 */
+.hero-lede::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 花体首字：金框 + 内白线 + 赭石底 + 朱砂字 */
+.hero-initial {
+  float: left;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 5px 14px 2px 0;
+  border: 1.5px solid rgba(184, 134, 60, 0.85);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 253, 248, 0.9),
+    inset 0 0 0 2px rgba(184, 134, 60, 0.32);
+  background: rgba(184, 134, 60, 0.14);
+  color: var(--rubric);
+  font-size: 30px;
+  line-height: 1;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  justify-content: center;
-  margin-top: clamp(32px, 4vw, 52px);
+  margin-top: clamp(26px, 3.2vw, 40px);
+}
+
+/* 页边图解：抄本的图画在页边，不是压在正文底下当水印 */
+.hero-figure {
+  margin: 0;
+  text-align: center;
+}
+
+.hero-diagram {
+  width: min(100%, 340px);
+  height: auto;
+  overflow: visible;
+}
+
+.hero-arc {
+  fill: none;
+  stroke: rgba(107, 88, 68, 0.4);
+  stroke-width: 0.9;
+}
+
+/* 内圆用朱砂虚线：它是结论（六个交点共圆），不是作图痕迹 */
+.hero-arc-inner {
+  stroke: rgba(156, 59, 46, 0.45);
+  stroke-dasharray: 4 3;
+}
+
+.hero-rule {
+  fill: rgba(184, 134, 60, 0.06);
+  stroke: var(--umber);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.hero-node circle {
+  fill: var(--ink);
+}
+
+.hero-figure figcaption {
+  margin-top: 16px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  letter-spacing: 0.1em;
 }
 
 .plate-link {
@@ -490,17 +593,22 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
   margin-bottom: clamp(26px, 3.5vw, 46px);
 }
 
+/* 朱红标题（rubrication）：中世纪抄本的正文用铁胆墨水写成褐黑色，
+   章节题名另用朱砂写成红色，好让读者一眼找到分节。这里沿用同一套做法。 */
 .rule-label {
   flex: none;
-  color: var(--ink);
+  color: var(--rubric);
   font-size: clamp(17px, 1.8vw, 21px);
   letter-spacing: 0.3em;
 }
 
+/* 双线分隔：抄本划栏用的是成对的细线，不是单独一条 */
 .rule-line {
   flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--taupe), rgba(191, 175, 158, 0.15));
+  height: 4px;
+  border-top: 1px solid rgba(191, 175, 158, 0.85);
+  border-bottom: 1px solid rgba(191, 175, 158, 0.5);
+  background: none;
 }
 
 .rule-note {
@@ -547,15 +655,35 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
   box-shadow: 0 24px 50px rgba(35, 32, 29, 0.24);
 }
 
-.hall-numeral {
+/* 作图水印：原来这里是罗马数字，但眉标已经写了 01/02/03，重复了。
+   换成几何作图后，整页的视觉语言跟页尾的欧氏命题一统一到一起。 */
+.hall-figure {
   position: absolute;
-  right: 0.12em;
-  bottom: -0.22em;
-  color: rgba(255, 250, 238, 0.13);
-  font-size: clamp(110px, 13vw, 176px);
-  line-height: 1;
+  right: -12%;
+  bottom: -14%;
+  width: clamp(140px, 16vw, 210px);
+  height: auto;
+  overflow: visible;
   pointer-events: none;
-  user-select: none;
+}
+
+/* 圆规痕迹比直尺结论更浅，跟真的作图层次一致 */
+.hall-arc {
+  fill: none;
+  stroke: rgba(255, 250, 238, 0.16);
+  stroke-width: 1.1;
+}
+
+.hall-rule {
+  fill: rgba(255, 250, 238, 0.05);
+  stroke: rgba(255, 250, 238, 0.26);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.hall-rule-line {
+  stroke: rgba(255, 250, 238, 0.16);
+  stroke-width: 1;
 }
 
 .hall-eyebrow {
@@ -700,6 +828,32 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
   line-height: 1.95;
 }
 
+/* 起首字要靠浮动让正文绕排，这里清一下浮动，免得影响下一段 */
+.sheet-text-open::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 花体首字：金框 + 内白线 + 赭石底 + 朱砂字，跟抄本的装饰首字母同构 */
+.sheet-initial {
+  float: left;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 3px 12px 2px 0;
+  border: 1.5px solid rgba(184, 134, 60, 0.85);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 253, 248, 0.9),
+    inset 0 0 0 2px rgba(184, 134, 60, 0.32);
+  background: rgba(184, 134, 60, 0.12);
+  color: var(--rubric);
+  font-size: 25px;
+  line-height: 1;
+  font-style: normal;
+}
+
 .sheet-text:last-child {
   margin-bottom: 0;
 }
@@ -789,143 +943,99 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
   transform: translateX(5px);
 }
 
-/* ---------- 经典著作 ---------- */
-.salon-canon {
-  /* 这一段要撑满画布，不受 .salon-section 的 max-width 约束 */
+/* ---------- 书末题记 ---------- */
+.salon-colophon {
+  /* 撑满画布，不受 .salon-section 的 max-width 约束 */
   max-width: none;
   margin-inline: calc(-1 * clamp(20px, 5vw, 88px));
-  padding: clamp(40px, 5vw, 72px) clamp(20px, 5vw, 88px);
-  background: var(--forest);
-  color: rgba(242, 236, 224, 0.92);
+  margin-bottom: 0;
+  padding: clamp(52px, 6vw, 96px) clamp(20px, 5vw, 88px);
+  background:
+    radial-gradient(90% 70% at 20% 25%, rgba(184, 134, 60, 0.1), transparent 60%),
+    linear-gradient(180deg, rgba(232, 223, 205, 0.62), rgba(226, 214, 192, 0.85));
+  border-top: 1px solid rgba(107, 88, 68, 0.24);
 }
 
-.salon-canon .section-rule {
-  max-width: 1180px;
-  margin-inline: auto;
-}
-
-.section-rule-light .rule-label {
-  color: rgba(242, 236, 224, 0.94);
-}
-
-.section-rule-light .rule-line {
-  background: linear-gradient(90deg, rgba(242, 236, 224, 0.4), rgba(242, 236, 224, 0.08));
-}
-
-.section-rule-light .rule-note {
-  color: rgba(242, 236, 224, 0.6);
-}
-
-/* 单列时间线：左侧一条竖轴串起所有条目。
-   之前是两列网格，年份在视觉上跳来跳去，读不出"时间在往前走"。 */
-.canon-list {
-  position: relative;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-}
-
-/* 竖轴：贴在头像列的中心线上 */
-.canon-list::before {
-  content: '';
-  position: absolute;
-  top: 12px;
-  bottom: 12px;
-  left: calc(clamp(56px, 7vw, 78px) + 18px);
-  width: 1px;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    rgba(242, 236, 224, 0.22) 8%,
-    rgba(242, 236, 224, 0.22) 92%,
-    transparent
-  );
-}
-
-.canon-item {
-  position: relative;
+.colophon-grid {
   display: grid;
-  grid-template-columns: clamp(56px, 7vw, 78px) 36px minmax(0, 1fr);
-  align-items: start;
-  gap: 0 14px;
-  padding: 13px 0;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(30px, 5vw, 72px);
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
-/* 有肖像的条目是"主角"，给它更多呼吸空间 */
-.canon-item-major {
-  padding: 20px 0;
+.colophon-figure {
+  margin: 0;
+  text-align: center;
 }
 
-.canon-year {
-  color: var(--taupe);
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-align: right;
-  padding-top: 3px;
-  white-space: nowrap;
+/* 手抄本里的几何图：圆规弧细而浅，直尺连出的线实而重，
+   跟真的用工具画出来的层次一致。 */
+.construction {
+  width: min(100%, 420px);
+  height: auto;
+  overflow: visible;
 }
 
-.canon-marker {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+.construction .arc {
+  fill: none;
+  stroke: rgba(107, 88, 68, 0.36);
+  stroke-width: 0.8;
 }
 
-.canon-marker img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 20%;
-  border: 1.5px solid;
-  background: var(--forest);
-  filter: grayscale(0.15) contrast(1.05) sepia(0.08);
+.construction .rule {
+  fill: rgba(184, 134, 60, 0.09);
+  stroke: var(--umber);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
 }
 
-/* 没有肖像的条目退化成一个小圆点，长短交错才有节奏 */
-.canon-dot {
-  width: 7px;
-  height: 7px;
-  margin-top: 9px;
-  border-radius: 50%;
-  background: rgba(242, 236, 224, 0.4);
-  box-shadow: 0 0 0 4px rgba(10, 8, 1, 0.9);
+.construction .node {
+  fill: var(--ink);
 }
 
-.canon-body {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding-top: 1px;
+/* 点的标注用朱红——中世纪抄本里标题和记号就是用红墨水写的 */
+.construction .mark {
+  fill: var(--rubric);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-style: italic;
 }
 
-.canon-head {
+.colophon-figure figcaption {
+  margin-top: 18px;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
+}
+
+.colophon-eyebrow {
+  margin: 0 0 12px;
+  color: var(--rubric);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+}
+
+.colophon-title {
+  margin: 0 0 20px;
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.colophon-text {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 2;
+}
+
+.colophon-actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 10px;
-}
-
-.canon-author {
-  color: rgba(242, 236, 224, 0.58);
-  font-size: 13px;
-  letter-spacing: 0.1em;
-}
-
-.canon-work {
-  color: rgba(242, 236, 224, 0.94);
-  font-size: 15.5px;
-}
-
-.canon-item-major .canon-work {
-  font-size: 17px;
-}
-
-.canon-note {
-  color: rgba(242, 236, 224, 0.6);
-  font-size: 13.5px;
-  line-height: 1.85;
+  gap: 14px;
+  margin-top: 28px;
 }
 
 /* ---------- 滚动浮现 ---------- */
@@ -947,12 +1057,11 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
   .hall-card:nth-child(2) { transition-delay: 0.1s; }
   .hall-card:nth-child(3) { transition-delay: 0.2s; }
 
-  /* 年表按顺序往下淌，比整块一起出现更像"时间在走" */
-  .canon-item:nth-child(3n + 2) { transition-delay: 0.06s; }
-  .canon-item:nth-child(3n) { transition-delay: 0.12s; }
-
   /* 讲义先出现，说明性的侧栏稍后跟上 */
   .preview-side { transition-delay: 0.12s; }
+
+  /* 先看到作图，再读旁边的字，跟"照着抄一遍再自己做"的顺序一致 */
+  .colophon-copy { transition-delay: 0.14s; }
 }
 
 /* ---------- 响应式 ---------- */
@@ -961,8 +1070,20 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .preview-grid {
+  .preview-grid,
+  .colophon-grid,
+  .hero-page {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* 窄屏把页边图解挪到正文下面，仍是先读字后看图 */
+  .hero-diagram {
+    width: min(100%, 260px);
+  }
+
+  /* 窄屏图放上面、字在下面，读的顺序还是"先看图再读字" */
+  .construction {
+    width: min(100%, 320px);
   }
 }
 
@@ -971,40 +1092,28 @@ const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图�
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .hero-echo {
-    display: none;
+  /* 窄屏卡片变窄，原尺寸的水印会压到正文和按钮上。
+     缩小并推向右下角，让它彻底避开按钮的横向范围，再压淡一档。 */
+  .hall-figure {
+    width: 104px;
+    right: -26px;
+    bottom: -26px;
+    opacity: 0.6;
   }
 
-  /* 窄屏把年份挪到内容上方，别再单占一列挤压书名 */
-  .canon-item {
-    grid-template-columns: 26px minmax(0, 1fr);
-    gap: 0 12px;
+  /* 两处花体首字在窄屏都收小一号，免得挤掉正文的行宽 */
+  .hero-initial {
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+    margin-right: 11px;
   }
 
-  .canon-year {
-    grid-column: 2;
-    grid-row: 1;
-    text-align: left;
-    margin-bottom: 4px;
-  }
-
-  .canon-marker {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-  }
-
-  .canon-marker img {
-    width: 26px;
-    height: 26px;
-  }
-
-  .canon-body {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .canon-list::before {
-    left: 13px;
+  .sheet-initial {
+    width: 38px;
+    height: 38px;
+    font-size: 21px;
+    margin-right: 10px;
   }
 
   .section-rule {

@@ -454,12 +454,18 @@ onBeforeUnmount(() => {
 
 /* 这些元素的 opacity/transform 全部由 JS 每帧直接写，
    所以刻意不加 CSS transition——两套缓动叠在一起会互相打架。 */
+/* 装帧成抄本插图页：中世纪的欧几里得、波爱修斯抄本开篇常有一整页作者像，
+   外面一圈泥金边、留一道暗缝、里面再压一条细白线。
+   这里用多层 inset 阴影画出这个双线金框，不改动任何布局。 */
 .tile {
   position: absolute;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  border: 1px solid rgba(242, 236, 224, 0.22);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(184, 134, 60, 0.5);
+  box-shadow:
+    inset 0 0 0 1px rgba(10, 8, 1, 0.6),
+    inset 0 0 0 2px rgba(242, 236, 224, 0.16),
+    0 18px 48px rgba(0, 0, 0, 0.55);
   opacity: 0;
   will-change: opacity, transform;
 }
@@ -472,16 +478,18 @@ onBeforeUnmount(() => {
   filter: grayscale(0.1) brightness(1.02) contrast(1.04) sepia(0.06);
 }
 
+/* 题名用泥金色而不是白色：抄本里插图页的题名是用金或朱砂写的。
+   深底上朱砂对比度不够，所以这里取金。 */
 .tile-label {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   padding: 5px 0 6px;
-  background: linear-gradient(0deg, rgba(6, 5, 1, 0.85), transparent);
-  color: rgba(242, 236, 224, 0.88);
+  background: linear-gradient(0deg, rgba(6, 5, 1, 0.88), transparent);
+  color: #d8ae6a;
   font-size: 11px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-align: center;
 }
 
