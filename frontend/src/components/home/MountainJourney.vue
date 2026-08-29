@@ -21,23 +21,32 @@ import {
 //    只有离散变化的量（当前板块名）才留在响应式里。
 // 2. 缓动用 frameLerp 按真实帧间隔换算，保证 60Hz / 144Hz 屏手感一致。
 
+// slug 对应 content 里真实的课程标识，scope 取自这些课程在数据库里的 subtitle，
+// 不是另编的一套说法。有了 slug，每一屏都能直接点进对应课程，
+// 而不是看完三屏漂亮画面却无处可去。
 const TOPICS = [
   {
     name: '微积分',
+    slug: 'calculus',
     accent: '#c9a86a',
     kicker: '从变化开始',
+    scope: '极限 · 导数 · 积分 · 级数',
     intro: '用极限刻画"无限接近"，用导数捕捉变化的快慢，再用积分把无数个瞬间重新连成整体。',
   },
   {
     name: '线性代数',
+    slug: 'linear-algebra',
     accent: '#9fb8c9',
     kicker: '给结构一个坐标',
+    scope: '行列式 · 矩阵 · 向量空间 · 特征值',
     intro: '向量、矩阵与线性变换，把方程组、空间旋转和数据降维，都收进同一套语言里。',
   },
   {
     name: '概率统计',
+    slug: 'probability',
     accent: '#c98a7a',
     kicker: '让偶然可以计算',
+    scope: '随机事件 · 随机变量 · 估计 · 检验',
     intro: '从随机事件到分布模型，从抽样到推断，在不确定里找到能落地的结论。',
   },
 ]
@@ -58,6 +67,7 @@ const TILES = [
 const PATH_TRACKS = [
   {
     name: '微积分',
+    slug: 'calculus',
     accent: '#c9a86a',
     portrait: '/portraits/newton.jpg',
     portraitName: '牛顿',
@@ -65,13 +75,17 @@ const PATH_TRACKS = [
   },
   {
     name: '线性代数',
+    slug: 'linear-algebra',
     accent: '#9fb8c9',
     portrait: '/portraits/gauss.jpg',
     portraitName: '高斯',
     next: ['抽象代数', '数值分析'],
   },
   {
-    name: '概率论',
+    // 课名跟数据库里的真实课程保持一致（不是「概率论」），
+    // 否则地图上点进去看到的标题跟这里对不上。
+    name: '概率统计',
+    slug: 'probability',
     accent: '#c98a7a',
     portrait: '/portraits/laplace.jpg',
     portraitName: '拉普拉斯',
@@ -180,7 +194,11 @@ function paint(progress) {
   const local = localSegmentProgress(progress, SEGMENTS[idx])
   const spotlight = computeSceneOpacity(progress, DISPLAY_SEGMENTS[idx], TILE_FADE)
   if (introEl.value) {
-    introEl.value.style.opacity = spotlight * smoothstep((local - 0.12) / 0.2) * galleryFade
+    const introOp = spotlight * smoothstep((local - 0.12) / 0.2) * galleryFade
+    introEl.value.style.opacity = introOp
+    // 面板里有"进入某课程"的链接，淡出后必须停止接收点击，
+    // 否则一个看不见的链接会一直挡在画面上拦截鼠标。
+    introEl.value.style.pointerEvents = introOp > 0.5 ? 'auto' : 'none'
   }
 
   // 学习路径图
@@ -240,7 +258,10 @@ function paintStatic() {
     el.style.opacity = 1
     el.style.transform = 'scale(1)'
   })
-  if (introEl.value) introEl.value.style.opacity = 1
+  if (introEl.value) {
+    introEl.value.style.opacity = 1
+    introEl.value.style.pointerEvents = 'auto'
+  }
   if (pathSceneEl.value) {
     pathSceneEl.value.style.opacity = 1
     pathSceneEl.value.style.visibility = 'visible'
@@ -307,7 +328,11 @@ onBeforeUnmount(() => {
         <span class="intro-bar" :style="{ background: TOPICS[activeIndex].accent }"></span>
         <p class="intro-kicker">{{ TOPICS[activeIndex].kicker }}</p>
         <h3 class="intro-title">{{ TOPICS[activeIndex].name }}</h3>
+        <p class="intro-scope">{{ TOPICS[activeIndex].scope }}</p>
         <p class="intro-copy">{{ TOPICS[activeIndex].intro }}</p>
+        <RouterLink class="intro-cta" :to="`/knowledge?course=${TOPICS[activeIndex].slug}`">
+          <span>进入{{ TOPICS[activeIndex].name }}</span><i aria-hidden="true">→</i>
+        </RouterLink>
       </div>
 
       <div class="grain" :style="{ backgroundImage: `url(${grainTile})` }" aria-hidden="true"></div>
@@ -353,7 +378,7 @@ onBeforeUnmount(() => {
               top: `${pctY(track.y)}%`,
               borderColor: track.accent,
             }"
-            to="/knowledge"
+            :to="`/knowledge?course=${track.slug}`"
           >
             <img class="path-avatar" :src="track.portrait" :alt="`${track.portraitName}肖像`" decoding="async" />
             <span class="path-track-text">
@@ -389,7 +414,9 @@ onBeforeUnmount(() => {
 <style scoped>
 .journey {
   position: relative;
-  height: 420vh;
+  /* 从 420vh 压到 320vh：氛围留着，但少滚一屏才摸得到会员和讲义。
+     每个板块仍有约 76vh 的滚动行程，节奏不会被压得太急。 */
+  height: 320vh;
   background: #0a0801;
   margin-inline: calc(50% - 50vw);
   margin-bottom: clamp(60px, 7.5vw, 108px);
@@ -512,11 +539,47 @@ onBeforeUnmount(() => {
   letter-spacing: 0.06em;
 }
 
+/* 这门课具体讲什么，取自数据库里课程的 subtitle */
+.intro-scope {
+  margin: 0 0 14px;
+  color: rgba(242, 236, 224, 0.6);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
 .intro-copy {
   margin: 0;
   color: rgba(242, 236, 224, 0.82);
   font-size: 14.5px;
   line-height: 1.9;
+}
+
+/* 每一屏都要能直接进对应课程，不然看完三屏漂亮画面无处可去 */
+.intro-cta {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+  border-bottom: 1px solid rgba(242, 236, 224, 0.45);
+  padding-bottom: 6px;
+  color: #f2ece0;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.intro-cta i {
+  font-style: normal;
+  transition: transform 0.25s ease;
+}
+
+.intro-cta:hover {
+  border-color: #c9a86a;
+  color: #c9a86a;
+}
+
+.intro-cta:hover i {
+  transform: translateX(5px);
 }
 
 /* ---------- 学习路径图 ---------- */
@@ -730,6 +793,12 @@ onBeforeUnmount(() => {
   .path-leaf {
     font-size: 11px;
     padding: 4px 10px;
+  }
+
+  /* 桌面上限宽 44vw 是为了给右侧画廊留位置；窄屏没有这个需要，
+     再压着只会把正文挤成每行十来个字，白白空掉半个屏幕。 */
+  .intro-panel {
+    width: min(420px, 78vw);
   }
 }
 </style>
