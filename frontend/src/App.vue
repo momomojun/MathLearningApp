@@ -1,9 +1,14 @@
 <script setup>
-import { onBeforeUnmount, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, onBeforeUnmount, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { authState, clearSession, logout, refreshMe } from './auth'
 
 const router = useRouter()
+const route = useRoute()
+
+// 首页有一段沉浸式的通栏滚动叙事，吸顶导航栏会一直悬在暗色画面上面，
+// 视觉上很打架，所以只在首页让它跟着正常滚走，其他页面保持吸顶方便导航。
+const isHome = computed(() => route.path === '/')
 
 function handleAuthExpired() {
   const current = router.currentRoute.value
@@ -31,7 +36,7 @@ async function handleLogout() {
 
 <template>
   <div class="site-shell">
-    <header class="topbar">
+    <header class="topbar" :class="{ 'topbar-static': isHome }">
       <RouterLink class="brand" to="/">
         <span class="brand-seal">M</span>
         <span>

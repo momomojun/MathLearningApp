@@ -5,14 +5,33 @@
 
 改图或加图时请同步更新本文件——这是商业站点，出处需要可追溯。
 
-## 首图
+## 首页画廊墙（MountainJourney 组件，现版本）
+
+不再是"一张全屏画换下一张"，改成几幅欧洲数学家肖像画常驻铺在暗底上，
+滚动时靠亮度/大小做聚光灯式的过渡。用到两组图，都是之前就下载好、
+核实过授权的素材，这次是换了个用法，没有新下载：
+
+- **常驻背景**：`frontend/public/art/hero.jpg`，拉斐尔《雅典学院》，压得很暗很虚，
+  只做画廊墙的底色和纵深，出处见下面"数学家肖像"表格上方那条记录。
+- **画廊墙上的六幅肖像**：欧几里得、牛顿、柯西、欧拉、高斯、拉普拉斯，
+  出处见下面"数学家肖像"表格，用法见 `MountainJourney.vue` 的 `TILES` 数组。
+
+## 水墨山水（上一版用过，现已停用）
+
+上一版首页用的是三段水墨山水叙事，用户反馈"像在翻页"、且要求换回欧洲数学家
+油画风格后弃用。文件还留在仓库里，没有删除：
+
+| 文件 | 作品 | 作者 | 年代 | 授权 |
+| --- | --- | --- | --- | --- |
+| `frontend/public/art/mountain-1.jpg` | 《早春图》（Early Spring） | 郭熙 Guo Xi | 1072 | Public domain |
+| `frontend/public/art/mountain-2.jpg` | 《谿山行旅图》（Travelers Among Mountains and Streams） | 范宽 Fan Kuan | 约 1000 | Public domain |
+| `frontend/public/art/mountain-3.jpg` | 《四季山水图·冬》（Landscape of Four Seasons: Winter） | 雪舟 Sesshū Tōyō | 室町时代，15 世纪 | Public domain |
+
+## 首图 / 常驻背景
 
 | 文件 | 作品 | 作者 | 年代 | 授权 |
 | --- | --- | --- | --- | --- |
 | `frontend/public/art/hero.jpg` | 《雅典学院》（The School of Athens） | Raphael（拉斐尔） | 1511 | Public domain |
-
-画面中央偏右下为持圆规俯身作图的欧几里得，左下为书写中的毕达哥拉斯。
-原图为梵蒂冈签字厅壁画，此处使用 1200px 宽的缩略版（488 KB）以控制首屏体积。
 
 ## 数学家肖像
 
@@ -43,7 +62,7 @@
 
 ## 更换图片
 
-- 换首图：改 `HomePage.vue` 中 `.salon` 的 `--stage-art`，图片放 `frontend/public/art/`
-- 换肖像：改 `figures` 数组里的 `portrait` 字段，图片放 `frontend/public/portraits/`
-- 裁切不满意：调 `.stage-art::before` 的 `background-position`，
-  或 `.figure-frame img` 的 `object-position`
+- 换画廊墙上的肖像：改 `MountainJourney.vue` 里 `TILES` 数组的 `src` 字段，图片放 `frontend/public/portraits/`
+- 换常驻背景：改 `MountainJourney.vue` 里 `.backdrop img` 的 `src`（当前写死为 `hero.jpg`）
+- 换"名录"板块的肖像（不同于画廊墙，是首页下方单独一节）：改 `HomePage.vue` 的 `figures` 数组里的 `portrait` 字段
+- 裁切不满意：调 `.tile img` / `.backdrop img` 的 `object-position`，或 `.figure-frame img` 的 `object-position`

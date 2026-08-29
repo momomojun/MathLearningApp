@@ -1,9 +1,9 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
+import MountainJourney from '../components/home/MountainJourney.vue'
 
 const root = ref(null)
-const stageArt = ref(null)
 
 let observer = null
 let onScroll = null
@@ -38,97 +38,14 @@ onMounted(() => {
   failsafeId = window.setTimeout(() => {
     targets.forEach((el) => el.classList.add('is-revealed'))
   }, 1600)
-
-  // 画作随滚动缓慢反向位移，做出景深。用 rAF 节流，避免滚动时重排。
-  onScroll = () => {
-    if (rafId) return
-    rafId = requestAnimationFrame(() => {
-      rafId = 0
-      const art = stageArt.value
-      if (!art) return
-      const stage = art.parentElement.getBoundingClientRect()
-      if (stage.bottom < 0 || stage.top > window.innerHeight) return
-      const progress = stage.top / window.innerHeight
-      art.style.setProperty('--shift', `${(progress * -46).toFixed(1)}px`)
-    })
-  }
-  window.addEventListener('scroll', onScroll, { passive: true })
-  onScroll()
 })
 
 onBeforeUnmount(() => {
   observer?.disconnect()
-  if (onScroll) window.removeEventListener('scroll', onScroll)
-  if (rafId) cancelAnimationFrame(rafId)
   if (failsafeId) clearTimeout(failsafeId)
 })
 
 // 首页展陈文案，不是课程内容，不需要走后台内容管理。
-
-// 数学家名录。portrait 留空时显示颜料色块 + 首字，
-// 想换成真实肖像画：把图片放进 public/portraits/，再把文件名填到 portrait 字段。
-const figures = [
-  {
-    name: '欧几里得',
-    latin: 'Euclid',
-    life: '约前 325 — 前 265',
-    work: '《几何原本》',
-    note: '把零散的几何事实收进公理与证明的秩序里。',
-    tone: 'umber',
-    to: '/knowledge',
-    portrait: 'euclid.jpg',
-  },
-  {
-    name: '牛顿',
-    latin: 'Isaac Newton',
-    life: '1643 — 1727',
-    work: '流数术',
-    note: '用变化率重写运动，微积分从此有了物理的重量。',
-    tone: 'forest',
-    to: '/knowledge',
-    portrait: 'newton.jpg',
-  },
-  {
-    name: '欧拉',
-    latin: 'Leonhard Euler',
-    life: '1707 — 1783',
-    work: '《无穷分析引论》',
-    note: '级数、函数与复数在他笔下第一次连成一体。',
-    tone: 'ochre',
-    to: '/knowledge',
-    portrait: 'euler.jpg',
-  },
-  {
-    name: '高斯',
-    latin: 'Carl F. Gauss',
-    life: '1777 — 1855',
-    work: '《算术研究》',
-    note: '消元法与正态分布，至今仍是代数与统计的地基。',
-    tone: 'terra',
-    to: '/knowledge',
-    portrait: 'gauss.jpg',
-  },
-  {
-    name: '柯西',
-    latin: 'Augustin-Louis Cauchy',
-    life: '1789 — 1857',
-    work: '《分析教程》',
-    note: '一句 ε–N，把「无限接近」从直觉变成可验证的语言。',
-    tone: 'slate',
-    to: '/knowledge',
-    portrait: 'cauchy.jpg',
-  },
-  {
-    name: '拉普拉斯',
-    latin: 'Pierre-Simon Laplace',
-    life: '1749 — 1827',
-    work: '《概率的分析理论》',
-    note: '让偶然可以被计算，概率因此成为一门学科。',
-    tone: 'sage',
-    to: '/knowledge',
-    portrait: 'laplace.jpg',
-  },
-]
 
 // 三个学习入口。
 const halls = [
@@ -161,27 +78,71 @@ const halls = [
   },
 ]
 
-// 底部年表：这些著作在成为教材之前，先是某个人的手稿。
+// 底部年表：人、著作、年份、贡献放在一起讲。
+// 之前这里只有书名，另有一节「名录」单独列同样这 6 位数学家的肖像卡片——
+// 而那 6 张肖像在上面的画廊墙里已经出现过一次，同一批人在一页里出现三遍。
+// 现在合并成一条年表：有肖像的条目配头像和一句贡献，其余只留年份和书名，
+// 长短交错反而比 12 行一模一样的条目更有节奏。
 const canon = [
-  ['欧几里得', '几何原本', '约前 300'],
-  ['阿基米德', '圆的度量', '约前 250'],
-  ['笛卡尔', '几何学', '1637'],
-  ['牛顿', '自然哲学的数学原理', '1687'],
-  ['欧拉', '无穷分析引论', '1748'],
-  ['高斯', '算术研究', '1801'],
-  ['拉普拉斯', '概率的分析理论', '1812'],
-  ['柯西', '分析教程', '1821'],
-  ['黎曼', '论几何学的基础假设', '1854'],
-  ['康托尔', '超穷数理论基础', '1895'],
-  ['希尔伯特', '几何基础', '1899'],
-  ['柯尔莫哥洛夫', '概率论基础', '1933'],
+  {
+    who: '欧几里得',
+    work: '几何原本',
+    year: '约前 300',
+    portrait: 'euclid.jpg',
+    accent: '#bfaf9e',
+    note: '把零散的几何事实收进公理与证明的秩序里。',
+  },
+  { who: '阿基米德', work: '圆的度量', year: '约前 250' },
+  { who: '笛卡尔', work: '几何学', year: '1637' },
+  {
+    who: '牛顿',
+    work: '自然哲学的数学原理',
+    year: '1687',
+    portrait: 'newton.jpg',
+    accent: '#9fb8c9',
+    note: '用变化率重写运动，微积分从此有了物理的重量。',
+  },
+  {
+    who: '欧拉',
+    work: '无穷分析引论',
+    year: '1748',
+    portrait: 'euler.jpg',
+    accent: '#c9a86a',
+    note: '级数、函数与复数在他笔下第一次连成一体。',
+  },
+  {
+    who: '高斯',
+    work: '算术研究',
+    year: '1801',
+    portrait: 'gauss.jpg',
+    accent: '#c98a7a',
+    note: '消元法与正态分布，至今仍是代数与统计的地基。',
+  },
+  {
+    who: '拉普拉斯',
+    work: '概率的分析理论',
+    year: '1812',
+    portrait: 'laplace.jpg',
+    accent: '#8fb3a6',
+    note: '让偶然可以被计算，概率因此成为一门学科。',
+  },
+  {
+    who: '柯西',
+    work: '分析教程',
+    year: '1821',
+    portrait: 'cauchy.jpg',
+    accent: '#a9b2b5',
+    note: '一句 ε–N，把「无限接近」从直觉变成可验证的语言。',
+  },
+  { who: '黎曼', work: '论几何学的基础假设', year: '1854' },
+  { who: '康托尔', work: '超穷数理论基础', year: '1895' },
+  { who: '希尔伯特', work: '几何基础', year: '1899' },
+  { who: '柯尔莫哥洛夫', work: '概率论基础', year: '1933' },
 ]
 
-const method = [
-  ['先建立结构', '用短讲义和清晰目录快速定位本节重点。'],
-  ['再完成练习', '用题型训练检查理解，把错题留在下一轮复习里。'],
-  ['最后回看讲解', '通过视频与互动图形，把抽象关系看得更具体。'],
-]
+// 一节讲义由哪些模块组成。取自 docs/TEMPLATE_GUIDE.md 里真实支持的指令，
+// 不是编出来的功能清单。
+const blockKinds = ['定义与定理', '例题与解析', '速查表格', '图像与互动', '视频讲解']
 </script>
 
 <template>
@@ -196,15 +157,15 @@ const method = [
         <span class="hero-line hero-line-alt">理之序</span>
       </h1>
 
-      <p class="hero-range">
-        <span>约前 300</span>
-        <i></i>
-        <span>至今</span>
+      <!-- 这个位置原来是「约前 300 —— 至今」，好看但不传递任何产品信息。
+           首屏最显眼的一行应该让人三秒内知道"这里有我要的课"。 -->
+      <p class="hero-courses">
+        <span>微积分</span><i></i><span>线性代数</span><i></i><span>概率统计</span>
       </p>
 
       <p class="hero-lede">
-        一处完成课程学习、针对练习与重点讲解。<br />
-        从欧几里得的公理到现代分析，按自己的节奏把数学学扎实。
+        为期末、考研与竞赛准备的大学数学。<br />
+        讲义、习题与解析在同一处，按自己的节奏把数学学扎实。
       </p>
 
       <div class="hero-actions">
@@ -217,58 +178,8 @@ const method = [
       </div>
     </header>
 
-    <!-- 画作 -->
-    <section class="hero-stage">
-      <div ref="stageArt" class="stage-art" aria-hidden="true"></div>
-      <div class="stage-varnish" aria-hidden="true"></div>
-      <div class="stage-panel reveal">
-        <p class="stage-eyebrow">从这里开始</p>
-        <p class="stage-text">
-          从一条数轴开始，到能写下
-          <em>lim</em>、<em>∫</em> 与 <em>det</em> 的那一天。
-        </p>
-        <RouterLink class="stage-link" to="/knowledge">
-          <span>开始学习</span><i aria-hidden="true">→</i>
-        </RouterLink>
-      </div>
-    </section>
-
-    <!-- 名录 -->
-    <section class="salon-section">
-      <div class="section-rule">
-        <span class="rule-label">名录</span>
-        <span class="rule-line"></span>
-        <span class="rule-note">把定义写下来的人</span>
-      </div>
-
-      <div class="figure-grid">
-        <RouterLink
-          v-for="figure in figures"
-          :key="figure.name"
-          class="figure-card reveal"
-          :to="figure.to"
-        >
-          <div class="figure-frame" :class="`tone-${figure.tone}`">
-            <img
-              v-if="figure.portrait"
-              :src="`/portraits/${figure.portrait}`"
-              :alt="`${figure.name}肖像`"
-              loading="lazy"
-              decoding="async"
-            />
-            <span v-else class="figure-monogram" aria-hidden="true">{{ figure.name.charAt(0) }}</span>
-            <span class="figure-varnish" aria-hidden="true"></span>
-          </div>
-          <div class="figure-plate">
-            <p class="figure-life">{{ figure.life }}</p>
-            <h3 class="figure-name">{{ figure.name }}</h3>
-            <p class="figure-latin">{{ figure.latin }}</p>
-            <p class="figure-work">{{ figure.work }}</p>
-            <p class="figure-note">{{ figure.note }}</p>
-          </div>
-        </RouterLink>
-      </div>
-    </section>
+    <!-- 山脉旅程：三座山 = 三个知识板块，鸟引路，终点是知识树。原型阶段。 -->
+    <MountainJourney />
 
     <!-- 学习入口 -->
     <section class="salon-section">
@@ -295,29 +206,60 @@ const method = [
       </div>
     </section>
 
-    <!-- 学习方式 -->
-    <section class="salon-section salon-method">
-      <div class="method-copy">
-        <div class="section-rule">
-          <span class="rule-label">学习方式</span>
-          <span class="rule-line"></span>
-        </div>
-        <ol class="method-list">
-          <li v-for="(step, index) in method" :key="step[0]" class="reveal">
-            <span class="method-index" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span>
-            <strong>{{ step[0] }}</strong>
-            <span class="method-note">{{ step[1] }}</span>
-          </li>
-        </ol>
+    <!-- 讲义预览：原来这里是「学习方式」的三条空泛承诺（先建立结构 / 再完成练习 /
+         最后回看讲解）。付费产品的首页与其宣称内容好，不如直接把内容摊开给人看。
+         下面这段是知识库里「数列极限」那一节的真实内容，不是示意图。 -->
+    <section class="salon-section salon-preview">
+      <div class="section-rule">
+        <span class="rule-label">讲义预览</span>
+        <span class="rule-line"></span>
+        <span class="rule-note">翻开任意一节，就是这样</span>
       </div>
 
-      <aside class="method-seal reveal">
-        <p class="seal-eyebrow">适合这些阶段</p>
-        <p class="seal-main">期末 · 考研 · 竞赛</p>
-        <p class="seal-note">
-          核心内容由数学、统计与工科背景教师共同整理，兼顾不同课程语境和复习节奏。
-        </p>
-      </aside>
+      <div class="preview-grid">
+        <article class="preview-sheet reveal">
+          <header class="sheet-head">
+            <span class="sheet-path">微积分 · 第一章 极限与连续</span>
+            <span class="sheet-free">免费试读</span>
+          </header>
+          <h3 class="sheet-title">1.1 数列极限</h3>
+
+          <div class="sheet-block sheet-block-def">
+            <p class="sheet-block-head">
+              <span class="sheet-chip">定义 1</span><span>数列极限</span>
+            </p>
+            <p class="sheet-text">
+              设 <em>{aₙ}</em> 是一个数列，<em>A</em> 是一个常数。如果对任意
+              <em>ε &gt; 0</em>，总存在正整数 <em>N</em>，使得当 <em>n &gt; N</em> 时都有
+            </p>
+            <p class="sheet-formula">| aₙ − A | &lt; ε</p>
+            <p class="sheet-text">则称数列 <em>{aₙ}</em> 收敛于 <em>A</em>。</p>
+          </div>
+
+          <div class="sheet-block sheet-block-problem">
+            <p class="sheet-block-head">
+              <span class="sheet-chip sheet-chip-alt">例题 1</span><span>计算题 · 基础</span>
+            </p>
+            <p class="sheet-text">
+              判断数列 <em>aₙ = (2n+1) / (n+3)</em> 是否收敛，并求它的极限。
+            </p>
+            <p class="sheet-fold" aria-hidden="true">解析　▾</p>
+          </div>
+        </article>
+
+        <aside class="preview-side reveal">
+          <p class="side-eyebrow">每一节的组成</p>
+          <ul class="side-blocks">
+            <li v-for="kind in blockKinds" :key="kind">{{ kind }}</li>
+          </ul>
+          <p class="side-note">
+            标注免费的小节无需注册即可阅读；会员小节在服务端校验权限，不只是前端隐藏。
+          </p>
+          <RouterLink class="side-link" to="/knowledge">
+            <span>去看完整的一节</span><i aria-hidden="true">→</i>
+          </RouterLink>
+        </aside>
+      </div>
     </section>
 
     <!-- 经典著作 -->
@@ -328,14 +270,36 @@ const method = [
         <span class="rule-note">写进教科书之前，它们先是某个人的手稿</span>
       </div>
 
-      <ul class="canon-list">
-        <li v-for="entry in canon" :key="entry[1]" class="reveal">
-          <span class="canon-author">{{ entry[0] }}</span>
-          <span class="canon-work">《{{ entry[1] }}》</span>
-          <span class="canon-dots" aria-hidden="true"></span>
-          <span class="canon-year">{{ entry[2] }}</span>
+      <ol class="canon-list">
+        <li
+          v-for="entry in canon"
+          :key="entry.work"
+          class="canon-item reveal"
+          :class="{ 'canon-item-major': entry.portrait }"
+        >
+          <span class="canon-year">{{ entry.year }}</span>
+
+          <span class="canon-marker" aria-hidden="true">
+            <img
+              v-if="entry.portrait"
+              :src="`/portraits/${entry.portrait}`"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              :style="{ borderColor: entry.accent }"
+            />
+            <span v-else class="canon-dot"></span>
+          </span>
+
+          <span class="canon-body">
+            <span class="canon-head">
+              <span class="canon-author">{{ entry.who }}</span>
+              <span class="canon-work">《{{ entry.work }}》</span>
+            </span>
+            <span v-if="entry.note" class="canon-note">{{ entry.note }}</span>
+          </span>
         </li>
-      </ul>
+      </ol>
     </section>
   </div>
 </template>
@@ -357,10 +321,6 @@ const method = [
 
   --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, SimSun,
     Georgia, "Times New Roman", serif;
-
-  /* 拉斐尔《雅典学院》，画面正中是持圆规俯身作图的欧几里得。
-     换画只需改这一行；设为 none 则回落到下面的渐变底子。 */
-  --stage-art: url('/art/hero.jpg');
 
   /* 通栏展陈画布。.site-shell 的左右内边距在多个断点被覆盖过，
      这里用不依赖父级内边距的写法，任何断点都能铺到视口边缘。 */
@@ -440,19 +400,20 @@ const method = [
   user-select: none;
 }
 
-.hero-range {
+.hero-courses {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 14px;
   align-items: center;
   justify-content: center;
   margin: clamp(26px, 3.5vw, 44px) 0 0;
-  color: var(--ink-soft);
-  font-size: clamp(13px, 1.3vw, 16px);
-  letter-spacing: 0.24em;
+  color: var(--ink);
+  font-size: clamp(14px, 1.4vw, 17px);
+  letter-spacing: 0.2em;
 }
 
-.hero-range i {
-  width: clamp(48px, 8vw, 120px);
+.hero-courses i {
+  width: clamp(28px, 4vw, 56px);
   height: 1px;
   background: var(--taupe);
 }
@@ -512,123 +473,6 @@ const method = [
   color: var(--parch);
 }
 
-/* ---------- 画作 ---------- */
-.hero-stage {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  overflow: hidden;
-  min-height: clamp(420px, 68vh, 720px);
-  margin-inline: calc(-1 * clamp(20px, 5vw, 88px));
-  margin-bottom: clamp(60px, 7.5vw, 108px);
-  background: var(--forest);
-}
-
-/* 视差层：JS 只改 --shift，不触发重排 */
-.stage-art {
-  position: absolute;
-  inset: 0;
-  transform: translate3d(0, var(--shift, 0px), 0);
-  will-change: transform;
-}
-
-/* 画面层：想换成真迹，把 --stage-art 设成 url('/art/hero.jpg') 即可，
-   未设置时下面几层渐变会画出一幅暗调的油画底子。 */
-.stage-art::before {
-  content: '';
-  position: absolute;
-  inset: -9%;
-  background-image:
-    var(--stage-art, none),
-    radial-gradient(58% 68% at 22% 26%, rgba(216, 180, 118, 0.58), transparent 62%),
-    radial-gradient(46% 56% at 73% 40%, rgba(166, 60, 44, 0.44), transparent 66%),
-    radial-gradient(52% 60% at 88% 74%, rgba(94, 136, 127, 0.34), transparent 68%),
-    radial-gradient(76% 84% at 50% 98%, rgba(24, 30, 24, 0.92), transparent 72%),
-    linear-gradient(152deg, #6b5844 0%, #3c4446 46%, #2c382d 100%);
-  background-size: cover;
-  /* 画面偏左下取景：把持圆规的欧几里得、写字的毕达哥拉斯留在视野内，
-     右下角让给文字块。裁切不满意就调这两个百分比。 */
-  background-position: 38% 52%;
-  animation: stage-drift 30s ease-in-out infinite alternate;
-}
-
-/* 罩光油：斜向高光 + 暗角，和名录里的画框同一套明暗对照 */
-.stage-varnish {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(114deg, rgba(255, 250, 238, 0.16) 0%, transparent 46%),
-    radial-gradient(120% 100% at 50% 45%, transparent 40%, rgba(18, 14, 10, 0.58) 100%),
-    repeating-linear-gradient(45deg, rgba(107, 88, 68, 0.05) 0 2px, transparent 2px 4px);
-  pointer-events: none;
-}
-
-@keyframes stage-drift {
-  from {
-    transform: scale(1.02) translate3d(0, 0, 0);
-  }
-  to {
-    transform: scale(1.13) translate3d(-1.6%, -1.4%, 0);
-  }
-}
-
-.stage-panel {
-  position: relative;
-  width: min(560px, 100%);
-  padding: clamp(30px, 3.6vw, 56px);
-  background: rgba(40, 52, 41, 0.94);
-  color: rgba(242, 236, 224, 0.95);
-}
-
-.stage-eyebrow {
-  margin: 0 0 16px;
-  color: var(--taupe);
-  font-size: 12px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
-
-.stage-text {
-  margin: 0;
-  font-size: clamp(19px, 2.1vw, 27px);
-  line-height: 1.85;
-  letter-spacing: 0.04em;
-}
-
-.stage-text em {
-  color: var(--ochre);
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-}
-
-.stage-link {
-  display: inline-flex;
-  gap: 12px;
-  align-items: center;
-  margin-top: clamp(22px, 2.6vw, 34px);
-  border-bottom: 1px solid rgba(242, 236, 224, 0.45);
-  padding-bottom: 6px;
-  font-size: 14px;
-  letter-spacing: 0.18em;
-  transition: border-color 0.25s ease, color 0.25s ease;
-}
-
-.stage-link i {
-  display: inline-block;
-  font-style: normal;
-  transition: transform 0.25s ease;
-}
-
-.stage-link:hover {
-  border-color: var(--ochre);
-  color: var(--ochre);
-}
-
-.stage-link:hover i {
-  transform: translateX(6px);
-}
-
 /* ---------- 分节标尺 ---------- */
 .salon-section {
   max-width: 1180px;
@@ -666,109 +510,11 @@ const method = [
   letter-spacing: 0.1em;
 }
 
-/* ---------- 名录 ---------- */
-.figure-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(20px, 2.6vw, 34px);
-}
-
-.figure-card {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(107, 88, 68, 0.2);
-  background: rgba(255, 253, 247, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.figure-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 46px rgba(35, 32, 29, 0.16);
-}
-
-.figure-frame {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.figure-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* 肖像的脸多在画面上半部，裁切时把重心上提，避免只剩下巴和衣领 */
-  object-position: center 26%;
-  /* 略降饱和、压暗对比，让不同来源的肖像画统一在同一层罩染下 */
-  filter: sepia(0.24) saturate(0.86) contrast(1.04);
-}
-
-.figure-monogram {
-  color: rgba(242, 236, 224, 0.9);
-  font-size: clamp(64px, 8vw, 104px);
-  line-height: 1;
-  letter-spacing: 0.05em;
-}
-
-/* 罩光油：一层斜向高光 + 四周暗角，就是油画的明暗对照 */
-.figure-varnish {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(118deg, rgba(255, 250, 238, 0.2) 0%, transparent 42%),
-    radial-gradient(120% 100% at 50% 50%, transparent 44%, rgba(20, 16, 12, 0.44) 100%);
-  pointer-events: none;
-}
-
-.tone-umber { background: var(--umber); }
+/* 学习入口卡片的底色。原来还有 umber/slate/sage 三个，是给已经删掉的
+   「名录」肖像框用的，跟着一起清掉了。 */
 .tone-forest { background: var(--forest); }
 .tone-ochre { background: var(--ochre); }
 .tone-terra { background: var(--terra); }
-.tone-slate { background: var(--slate); }
-.tone-sage { background: var(--sage); }
-
-.figure-plate {
-  flex: 1;
-  border-top: 1px solid rgba(107, 88, 68, 0.2);
-  padding: 20px 22px 24px;
-}
-
-.figure-life {
-  margin: 0 0 8px;
-  color: var(--umber);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-}
-
-.figure-name {
-  margin: 0;
-  font-size: clamp(21px, 2.2vw, 26px);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-}
-
-.figure-latin {
-  margin: 4px 0 0;
-  color: var(--ink-soft);
-  font-size: 12.5px;
-  font-style: italic;
-  letter-spacing: 0.06em;
-}
-
-.figure-work {
-  margin: 14px 0 0;
-  color: var(--ink);
-  font-size: 14.5px;
-}
-
-.figure-note {
-  margin: 8px 0 0;
-  color: var(--ink-soft);
-  font-size: 13.5px;
-  line-height: 1.85;
-}
 
 /* ---------- 学习入口 ---------- */
 .hall-grid {
@@ -855,76 +601,192 @@ const method = [
   transform: translateX(6px);
 }
 
-/* ---------- 学习方式 ---------- */
-.salon-method {
+/* ---------- 讲义预览 ---------- */
+.preview-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-  gap: clamp(28px, 4vw, 60px);
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(24px, 3.5vw, 52px);
   align-items: start;
 }
 
-.method-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+/* 这张卡片刻意做成"一张纸"的样子：白底、细边、轻微投影，
+   跟周围羊皮纸色的画布拉开层次，像真的从讲义里撕下来的一页。 */
+.preview-sheet {
+  border: 1px solid rgba(107, 88, 68, 0.22);
+  border-radius: 3px;
+  padding: clamp(22px, 2.6vw, 34px);
+  background: rgba(255, 253, 248, 0.86);
+  box-shadow: 0 20px 46px rgba(35, 32, 29, 0.09);
 }
 
-.method-list li {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 6px 20px;
-  border-top: 1px solid rgba(107, 88, 68, 0.18);
-  padding: 20px 0;
+.sheet-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.method-list li:last-child {
-  border-bottom: 1px solid rgba(107, 88, 68, 0.18);
+.sheet-path {
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
 }
 
-.method-index {
-  grid-row: span 2;
-  color: var(--taupe);
-  font-size: clamp(26px, 3vw, 36px);
-  line-height: 1;
+.sheet-free {
+  border: 1px solid rgba(47, 106, 82, 0.4);
+  border-radius: 999px;
+  padding: 3px 10px;
+  color: #2f6a52;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
 }
 
-.method-list strong {
-  align-self: center;
-  font-size: clamp(17px, 1.8vw, 20px);
+.sheet-title {
+  margin: 14px 0 20px;
+  font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+/* 复用知识库里定义块/例题块的视觉语言，预览才是"真的长这样" */
+.sheet-block {
+  border-radius: 4px 10px 10px 4px;
+  padding: 16px 20px 18px;
+}
+
+.sheet-block + .sheet-block {
+  margin-top: 14px;
+}
+
+.sheet-block-def {
+  background: #edf5ef;
+  box-shadow: inset 4px 0 0 #2f6a52;
+}
+
+.sheet-block-problem {
+  background: #f7f3ea;
+  box-shadow: inset 4px 0 0 #9a6a3d;
+}
+
+.sheet-block-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 0 0 12px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.sheet-chip {
+  border-radius: 4px;
+  padding: 2px 8px;
+  background: #2f6a52;
+  color: #f2ece0;
+  font-size: 11.5px;
+  font-weight: 600;
   letter-spacing: 0.08em;
 }
 
-.method-note {
-  color: var(--ink-soft);
-  font-size: 14px;
-  line-height: 1.9;
+.sheet-chip-alt {
+  background: #9a6a3d;
 }
 
-.method-seal {
+.sheet-text {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.sheet-text:last-child {
+  margin-bottom: 0;
+}
+
+/* 公式用衬线斜体，跟正文拉开区别，接近 KaTeX 的观感 */
+.sheet-text em,
+.sheet-formula {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+.sheet-formula {
+  margin: 14px 0;
+  color: var(--ink);
+  font-size: clamp(17px, 1.9vw, 21px);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.sheet-fold {
+  margin: 12px 0 0;
+  color: #9a6a3d;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+.preview-side {
   border: 1px solid rgba(107, 88, 68, 0.24);
-  padding: clamp(26px, 3vw, 36px);
+  padding: clamp(24px, 2.8vw, 34px);
   background: linear-gradient(160deg, rgba(255, 253, 247, 0.72), rgba(232, 223, 205, 0.5));
 }
 
-.seal-eyebrow {
-  margin: 0;
+.side-eyebrow {
+  margin: 0 0 16px;
   color: var(--umber);
   font-size: 12px;
   letter-spacing: 0.28em;
 }
 
-.seal-main {
-  margin: 14px 0 0;
-  font-size: clamp(22px, 2.4vw, 28px);
-  letter-spacing: 0.1em;
+.side-blocks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.seal-note {
-  margin: 16px 0 0;
+.side-blocks li {
+  border-top: 1px solid rgba(107, 88, 68, 0.16);
+  padding: 10px 0;
+  font-size: 14.5px;
+  letter-spacing: 0.04em;
+}
+
+.side-blocks li:last-child {
+  border-bottom: 1px solid rgba(107, 88, 68, 0.16);
+}
+
+.side-note {
+  margin: 18px 0 0;
   color: var(--ink-soft);
-  font-size: 13.5px;
-  line-height: 1.95;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.side-link {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 18px;
+  border-bottom: 1px solid rgba(107, 88, 68, 0.4);
+  padding-bottom: 5px;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.side-link i {
+  font-style: normal;
+  transition: transform 0.25s ease;
+}
+
+.side-link:hover {
+  border-color: var(--umber);
+  color: var(--umber);
+}
+
+.side-link:hover i {
+  transform: translateX(5px);
 }
 
 /* ---------- 经典著作 ---------- */
@@ -954,48 +816,116 @@ const method = [
   color: rgba(242, 236, 224, 0.6);
 }
 
+/* 单列时间线：左侧一条竖轴串起所有条目。
+   之前是两列网格，年份在视觉上跳来跳去，读不出"时间在往前走"。 */
 .canon-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 clamp(32px, 5vw, 72px);
-  max-width: 1180px;
+  position: relative;
+  max-width: 760px;
   margin: 0 auto;
   padding: 0;
   list-style: none;
 }
 
-.canon-list li {
+/* 竖轴：贴在头像列的中心线上 */
+.canon-list::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: calc(clamp(56px, 7vw, 78px) + 18px);
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(242, 236, 224, 0.22) 8%,
+    rgba(242, 236, 224, 0.22) 92%,
+    transparent
+  );
+}
+
+.canon-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: clamp(56px, 7vw, 78px) 36px minmax(0, 1fr);
+  align-items: start;
+  gap: 0 14px;
+  padding: 13px 0;
+}
+
+/* 有肖像的条目是"主角"，给它更多呼吸空间 */
+.canon-item-major {
+  padding: 20px 0;
+}
+
+.canon-year {
+  color: var(--taupe);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-align: right;
+  padding-top: 3px;
+  white-space: nowrap;
+}
+
+.canon-marker {
   display: flex;
-  gap: 12px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.canon-marker img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 1.5px solid;
+  background: var(--forest);
+  filter: grayscale(0.15) contrast(1.05) sepia(0.08);
+}
+
+/* 没有肖像的条目退化成一个小圆点，长短交错才有节奏 */
+.canon-dot {
+  width: 7px;
+  height: 7px;
+  margin-top: 9px;
+  border-radius: 50%;
+  background: rgba(242, 236, 224, 0.4);
+  box-shadow: 0 0 0 4px rgba(10, 8, 1, 0.9);
+}
+
+.canon-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 1px;
+}
+
+.canon-head {
+  display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  border-bottom: 1px solid rgba(242, 236, 224, 0.14);
-  padding: 15px 0;
-  font-size: 15px;
+  gap: 10px;
 }
 
 .canon-author {
-  flex: none;
-  min-width: 5.6em;
-  color: rgba(242, 236, 224, 0.62);
+  color: rgba(242, 236, 224, 0.58);
   font-size: 13px;
   letter-spacing: 0.1em;
 }
 
 .canon-work {
-  flex: none;
+  color: rgba(242, 236, 224, 0.94);
+  font-size: 15.5px;
 }
 
-.canon-dots {
-  flex: 1;
-  height: 1px;
-  border-bottom: 1px dotted rgba(242, 236, 224, 0.28);
+.canon-item-major .canon-work {
+  font-size: 17px;
 }
 
-.canon-year {
-  flex: none;
-  color: var(--taupe);
+.canon-note {
+  color: rgba(242, 236, 224, 0.6);
   font-size: 13.5px;
-  letter-spacing: 0.08em;
+  line-height: 1.85;
 }
 
 /* ---------- 滚动浮现 ---------- */
@@ -1014,57 +944,29 @@ const method = [
   }
 
   /* 逐个入场，像展签一块块被点亮 */
-  .figure-card:nth-child(2),
-  .hall-card:nth-child(2) {
-    transition-delay: 0.1s;
-  }
+  .hall-card:nth-child(2) { transition-delay: 0.1s; }
+  .hall-card:nth-child(3) { transition-delay: 0.2s; }
 
-  .figure-card:nth-child(3),
-  .hall-card:nth-child(3) {
-    transition-delay: 0.2s;
-  }
+  /* 年表按顺序往下淌，比整块一起出现更像"时间在走" */
+  .canon-item:nth-child(3n + 2) { transition-delay: 0.06s; }
+  .canon-item:nth-child(3n) { transition-delay: 0.12s; }
 
-  .figure-card:nth-child(4) { transition-delay: 0.06s; }
-  .figure-card:nth-child(5) { transition-delay: 0.16s; }
-  .figure-card:nth-child(6) { transition-delay: 0.26s; }
-
-  .canon-list li:nth-child(even) {
-    transition-delay: 0.08s;
-  }
-
-  .method-list li:nth-child(2) { transition-delay: 0.1s; }
-  .method-list li:nth-child(3) { transition-delay: 0.2s; }
-}
-
-/* 肖像随悬停缓缓推近，像凑近细看一幅画 */
-.figure-frame img,
-.figure-monogram {
-  transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.figure-card:hover .figure-frame img,
-.figure-card:hover .figure-monogram {
-  transform: scale(1.06);
+  /* 讲义先出现，说明性的侧栏稍后跟上 */
+  .preview-side { transition-delay: 0.12s; }
 }
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 900px) {
-  .figure-grid,
   .hall-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .salon-method {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .canon-list {
+  .preview-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
 @media (max-width: 620px) {
-  .figure-grid,
   .hall-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1073,8 +975,36 @@ const method = [
     display: none;
   }
 
-  .hero-stage {
-    min-height: clamp(360px, 56vh, 460px);
+  /* 窄屏把年份挪到内容上方，别再单占一列挤压书名 */
+  .canon-item {
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 0 12px;
+  }
+
+  .canon-year {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+    margin-bottom: 4px;
+  }
+
+  .canon-marker {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .canon-marker img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .canon-body {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .canon-list::before {
+    left: 13px;
   }
 
   .section-rule {
@@ -1093,33 +1023,16 @@ const method = [
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .figure-card,
   .hall-card,
   .plate-link,
   .plate-link i,
-  .hall-action i,
-  .stage-link,
-  .stage-link i,
-  .figure-frame img,
-  .figure-monogram {
+  .hall-action i {
     transition: none;
   }
 
-  .figure-card:hover,
   .hall-card:hover,
   .plate-link:hover {
     transform: none;
-  }
-
-  .figure-card:hover .figure-frame img,
-  .figure-card:hover .figure-monogram {
-    transform: none;
-  }
-
-  /* 画作停在中间状态，不做缓慢推移 */
-  .stage-art::before {
-    animation: none;
-    transform: scale(1.06);
   }
 }
 </style>

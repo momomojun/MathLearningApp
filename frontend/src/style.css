@@ -47,6 +47,13 @@ a {
   display: none;
 }
 
+/* 首页有通栏的暗色滚动叙事，导航栏吸顶会一直悬浮在画面上面，很打架，
+   所以首页不吸顶，正常跟着滚走；其他页面维持吸顶方便导航。 */
+.topbar.topbar-static {
+  position: static;
+  top: auto;
+}
+
 .topbar {
   position: sticky;
   top: 16px;
