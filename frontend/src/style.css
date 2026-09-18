@@ -47,13 +47,6 @@ a {
   display: none;
 }
 
-/* 首页有通栏的暗色滚动叙事，导航栏吸顶会一直悬浮在画面上面，很打架，
-   所以首页不吸顶，正常跟着滚走；其他页面维持吸顶方便导航。 */
-.topbar.topbar-static {
-  position: static;
-  top: auto;
-}
-
 .topbar {
   position: sticky;
   top: 16px;
@@ -2729,7 +2722,10 @@ p {
 
 /* 2026 visual refresh: quiet, focused product UI without changing behavior. */
 :root {
-  --ui-bg: #f5f7f5;
+  /* 底色调成暖中性：首页整块是纸白 #fbfaf7，原来的冷灰绿在导航栏那一条
+     会跟下面的正文显出一道色差。其余页面都是白卡片浮在这层底色上，
+     换成暖白不影响任何对比度。 */
+  --ui-bg: #f8f7f3;
   --ui-surface: #ffffff;
   --ui-surface-muted: #f0f4f1;
   --ui-surface-accent: #e7f0eb;
