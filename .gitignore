@@ -20,6 +20,11 @@ env/
 .env
 .env.local
 
+# 数据库导出：里面是真实用户记录（含密码哈希和邮箱），只留在本地。
+# 曾经被误提交过，已从历史里清除，别再加回来。见 README「本地文件」一节。
+backup.json
+*.dump.json
+
 # Node / frontend
 node_modules/
 frontend/dist/
